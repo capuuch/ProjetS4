@@ -1,39 +1,61 @@
-
-table{
+.nav{
     table-layout: fixed;
     border:solid;
     border-color:rgb(0, 0, 0);
     background-color:rgba(0, 0, 0, 0.397);
     border-radius:0cap;
     width: 90%;
-    font-size: 160%;
+    font-size: 120%;
+}
+
+.avaaatar{
+    border-radius:5cap;
+    display: flex;
+    margin: 0 auto;
 }
 
 h1{
-    font-family: Montserrat;
+    font-family: montserrat, sans-serif;
     text-align: center;
     color:rgb(0, 0, 0); 
     text-transform: uppercase;
     Font-size: 325%;
-    text-shadow: 2px 3px 5px rgb(0, 0, 0);
+    text-shadow: 5px 2px 10px rgb(0, 0, 0);
 }
 
 a{  
     text-decoration: none;
-    font-family: Montserrat;
+    font-size: 1.5vw;   /*wv pour ajuster la taille de la police en fonction de la taille de la fenetre*/
+    font-family:montserrat, sans-serif;
     text-transform: uppercase;
-    color:rgb(255, 255, 255);
+    color:#A1B5D8;
     text-shadow: 2px 3px 5px rgb(0, 0, 0);
+    
 }
 
-a:hover{color:yellow}
+a:hover{color:white}
 
-td{
-    text-align: center;
+td{text-align: center}
+
+h2{
+    text-align:center;
+    font-family:montserrat, sans-serif;
+    color:#3b3e58;
+    font-size: 20px;
+    font-weight: none;
 }
 
-th{
-    padding:64px;
+.bi{margin-right:5px}
+
+.ca:hover{color:rgb(196, 9, 9)}
+
+.na:hover{color:rgb(243, 227, 227)}
+
+.c1{
+    display: flex;
+    width: 50%; /* ou une autre valeur fixe comme 300px */
+    margin: 0 auto;
+    font-size: 3vw;
 }
 
 .paysage{
@@ -45,4 +67,135 @@ th{
     width : 100%;
     height : 100%;
     z-index: -1;
+}
+
+.montserrat{
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+.satisfy{
+    font-family: "Satisfy", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*    PAGE   INSCRIPTION    */
+
+.inscrire{
+    border:solid;
+    border-style:double;
+    background-color: rgba(94, 86, 113, 0.554);
+    border-radius: 2cap;
+    height: 300px;
+    width: 400px;
+}
+
+input[type="text"], input[type="tel"], input[type="password"]{
+    background-color:transparent;
+}
+
+.ressset{
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    border:solid;
+    border-style:double;
+    border-radius: 2cap;
+    width:60px;
+    background-color: rgba(94, 86, 113, 0.655);
+}
+
+/*    PAGE   PROFIL       */
+
+.profil{
+    
+    padding: 10px;
+    padding-top: 20px;
+    padding-left: 30px;
+    width:400px;
+    height:300px;
+    border:solid;
+    border-style:double;
+    border-radius: 2cap;
+    background-color: rgba(94, 86, 113, 0.554);
+    font-size: 15px;
+    text-align: left;
+}
+
+.profil-info{
+    font-size: 25px;
+}
+
+.btn-modif{
+    cursor:pointer;
+    
+}
+.btn-modif:hover{
+    color: #A1B5D8;
+}
+
+/*    PAGE   PRESENTATION    */
+
+.normalA {
+    
+    padding: 10px;
+    width:550px;
+    height:150px;
+    border-style:double;
+    border-radius: 2cap;
+    background-color: rgba(94, 86, 113, 0.554);
+    font-size: 20px;
+}
+.normalB {
+    
+    padding: 20px;
+    width:300px ;
+    height:50px ;
+    border-style:double;
+    border-radius: 2cap;
+    background-color: rgba(94, 86, 113, 0.554);
+    font-size: 17px;
+
+}
+.searchh{
+    font-size: 12px;
+    border:solid;
+    border-style:double;
+    border-radius: 2cap;
+    width:200px;
+    background-color: rgba(94, 86, 113, 0.655);
+}
+
+.btn_search{
+    font-size: 12px;
+    border:solid;
+    border-style:double;
+    border-radius: 2cap;
+    width:80px;
+    background-color: rgba(173, 170, 178, 0.655);
+}
+
+
+/*     PAGE   CONNEXION    */
+
+.seconnecter{
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    border:solid;
+    border-style:double;
+    border-radius: 2cap;
+    width:100px;
+    background-color: rgba(94, 86, 113, 0.655);
+}
+
+.tabconnexion{
+    background-color:rgba(94, 86, 113, 0.554);
+    border:solid;
+    border-style:double;
+    border-radius: 2cap;
+    height: 200px;
+    width: 300px;
 }
