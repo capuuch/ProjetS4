@@ -7,11 +7,15 @@
         <title>Green Odyssey Voyages</title>
 
         <meta charset="UTF-8">
-        <meta name=”author” content=”Anas_Capucine_Hadil”/>
+        <!--<meta name="author" content="Anas_Capucine_Hadil"/>-->
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- pour la map-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/> <!-- pour la map-->
+       
     </head>
     <body>
         <center><h1>Green Odyssey</h1></center>
@@ -26,7 +30,54 @@
             </tr>
         </table></center></br></br></br>
         
-        <h2> Voyagessss </h2>
+        <h2> Voyages </h2><br>
+        <center><form>
+            <div class="daate">
+                <label for="date-D"> Quand souhaitez-vous partir ?<br><br></label>
+                <input id="date-D" name="date-D" type="date">
+                <label for="date-Fin"></label>
+                <input id="date-Fin" name="date-Fin" type="date">
+            </div><br><br><br><br>
+            <div class="lieuu">
+                <label for="lieu"> Quelle région du Canada voulez-vous découvrir ?<br><br></label>
+                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Chutes du Niagara" checked="checked"> Chutes du Niagara
+                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Vancouver"> Vancouver
+                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Rocky Mountains"> Rocky Mountains
+                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="New Brunswick"> New Brunswick
+                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Alberta"> Alberta
+                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Quebec"> Quebec
+                
+            </div><br><br>
+
+            <div>
+                <div id="map"></div>
+
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                <script>
+                    // Initialiser la carte
+                    var map = L.map('map').setView([54.58, -95.69], 3); // Coordonnées du canada
+
+                    // Ajouter une couche OpenStreetMap
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://carto.com/">Carto</a>'}).addTo(map);
+
+                    // Ajouter un marqueur
+                    L.marker([43.08, -79.07]).addTo(map)
+                        .bindPopup('Chutes du niagara')
+                    L.marker([43.7, -79.42]).addTo(map)
+                        .bindPopup('Toronto')
+                    L.marker([53.93, -116.58]).addTo(map)
+                        .bindPopup('Alberta')
+                    L.marker([49.28, -123.12]).addTo(map)
+                        .bindPopup('Vancouver')
+                    L.marker([46.56, -66.64]).addTo(map)
+                        .bindPopup('New Brunswick')
+                    L.marker([51.42, -116.18]).addTo(map)
+                        .bindPopup('Rocky Mountains')
+                    L.marker([46.81, -71.21]).addTo(map)
+                        .bindPopup('Quebec')
+                </script>
+            </div>
+        </form></center>
 
     </body>
     <div class="paysage"></div>
