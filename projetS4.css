@@ -3,7 +3,8 @@
     border:solid;
     border-color:rgb(0, 0, 0);
     background-color:rgba(0, 0, 0, 0.397);
-    border-radius:0cap;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+    border-radius:1cap;
     width: 90%;
     font-size: 120%;
 }
@@ -17,13 +18,23 @@
 h1{
     font-family: montserrat, sans-serif;
     text-align: center;
-    color:rgb(0, 0, 0); 
+    color:rgba(94, 86, 113, 0.912);
     text-transform: uppercase;
     Font-size: 325%;
-    text-shadow: 5px 2px 10px rgb(0, 0, 0);
+    /*text-shadow: 0px 0px 10px rgb(0, 0, 0);*/
+    text-shadow: 0px 4px 10px rgba(94, 86, 113, 0.912);
 }
 
-a{  
+a.canadaa{
+    text-decoration: none;
+    color:#3b3e58;
+}
+
+a.canadaa:hover{
+    color: #3b3e58;
+}
+
+a.navi{  
     text-decoration: none;
     font-size: 1.5vw;   /*wv pour ajuster la taille de la police en fonction de la taille de la fenetre*/
     font-family:montserrat, sans-serif;
@@ -32,30 +43,63 @@ a{
     text-shadow: 2px 3px 5px rgb(0, 0, 0);
     
 }
-
+a.normal{
+    color: black;
+}
 a:hover{color:white}
 
 td{text-align: center}
 
-h2{
-    text-align:center;
-    font-family:montserrat, sans-serif;
-    color:#3b3e58;
-    font-size: 25px;
-    font-weight: none;
+.ca,.na{
+    color: aliceblue;
 }
-
-.bi{margin-right:5px}
 
 .ca:hover{color:rgb(196, 9, 9)}
 
 .na:hover{color:rgb(243, 227, 227)}
 
 .c1{
-    display: flex;
-    width: 50%; /* ou une autre valeur fixe comme 300px */
-    margin: 0 auto;
+    text-align: center;
+    font-family: quicksand, sans-serif;
     font-size: 3vw;
+    color: aliceblue;
+    box-shadow: 5px 2px 10px rgb(0, 0, 0, 0.4);
+    border-radius: 1cap;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 5%;
+}
+
+.bi{margin-right:5px}
+
+h2{
+    text-align:center;
+    color:#3b3e58;
+    font-size: 25px;
+    font-weight: none;
+}
+
+.parag{
+    font-size: 2vw;
+    color: aliceblue;
+}
+
+.presentationn{
+    text-decoration: none;
+    color:#3b3e58;
+}
+.presentationn:hover{
+    color:aliceblue;
+}
+
+footer{
+    /*background-color: rgba(0, 0, 0, 0.397);*/
+    background-color:rgba(94, 86, 113, 0.912);
+    color:aliceblue;
+    text-align: center;
+    padding: 10px 0;
+    font-family: quicksand, sans-serif;
+    margin-top: 20%;
 }
 
 .paysage{
@@ -75,22 +119,25 @@ h2{
     font-weight: weight;
     font-style: normal;
 }
-.satisfy{
-    font-family: "Satisfy", serif;
-    font-weight: 400;
+
+.quicksand{
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
     font-style: normal;
-}
+  }
 
 /*    PAGE   INSCRIPTION    */
 
 .inscrire{
-    border:solid;
-    border-style:double;
-    background-color: rgba(94, 86, 113, 0.554);
+    background-color: rgba(240, 255, 255, 0.638);
+    color: rgb(110, 99, 134);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.6);
     border-radius: 2cap;
     height: 300px;
     width: 500px;
     font-size: 20px;
+    font-family: quicksand, sans-serif;
 }
 
 .inscrire td{
@@ -103,17 +150,24 @@ input[type="text"], input[type="tel"], input[type="password"]{
 
 .ressset{
     text-align: center;
+    font-family: quicksand, sans-serif;
     padding: 5px;
     font-size: 15px;
-    border:solid;
-    border-style:double;
     border-radius: 2cap;
     width:60px;
-    background-color: rgba(94, 86, 113, 0.655);
+    background-color: rgba(129, 118, 156, 0.655);
 }
 .ressset:hover{
-    color: #A1B5D8;
+    color: #ffffff;
 }
+.inscrire input::placeholder {
+    color: rgba(129, 118, 156, 0.655);
+    font-style: italic; /* Style en italique */
+    font-size: 15px;
+    font-family: quicksand, sans-serif;
+    opacity: 70%;
+}
+
 
 /*    PAGE   PROFIL       */
 
@@ -122,17 +176,18 @@ input[type="text"], input[type="tel"], input[type="password"]{
     padding-top: 20px;
     padding-left: 30px;
     width:400px;
-    height:350px;
-    border:solid;
-    border-style:double;
-    border-radius: 2cap;
-    background-color: rgba(94, 86, 113, 0.554);
+    height:390px;
+    border-radius: 4cap;
+    background-color: rgba(240, 255, 255, 0.638);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     font-size: 15px;
     text-align: left;
+    font-family: quicksand, sans-serif;
 }
 
 .profil-info{
     font-size: 20px;
+    color: rgb(110, 99, 134);
 }
 
 button {
@@ -141,6 +196,7 @@ button {
 }
 .btn-modif{
     cursor:pointer;
+    color:#3b3e58;
 }
 .btn-modif:hover{
     color: #A1B5D8;
@@ -150,40 +206,66 @@ button {
 /*    PAGE   PRESENTATION    */
 
 .normalA{
-    padding: 10px;
-    width:550px;
-    height:150px;
-    border-style:double;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 5%;
+    margin-right:5%;
+    margin-left: 5%;
     border-radius: 2cap;
     background-color: rgba(94, 86, 113, 0.554);
-    font-size: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    font-family: quicksand, sans-serif;
 }
-.normalB{
-    padding: 20px;
-    width:330px ;
-    height:60px ;
-    border-style:double;
-    border-radius: 2cap;
-    background-color: rgba(94, 86, 113, 0.554);
-    font-size: 18px;
 
+.titress{
+    text-align: center;
+    font-size: 3vw;
+    color: aliceblue;
+}
+
+.normalB{
+    padding: 2%;
+    padding-top: 4%;
+    margin-bottom: 7%;
+    width:60%;
+    border-radius: 10cap;
+    background-color: rgba(94, 86, 113, 0.554);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    font-size: 2vw;
+    font-family: quicksand, sans-serif;
+}
+.press{
+    font-size: 2vw;
+    color:#A1B5D8;
+}
+.normalB input::placeholder {
+    color: #A1B5D8; 
+    font-style: italic; /* Style en italique */
+    font-size: 2vw;
+    font-family: quicksand, sans-serif;
+    opacity: 60%;
 }
 .searchh{
-    font-size: 16px;
-    border:solid;
-    border-style:double;
+    font-size: 2vw;
     border-radius: 2cap;
-    width:200px;
+    padding-right: 11%;
+    padding-left: 2%;
     background-color: rgba(94, 86, 113, 0.655);
+    border: solid 1px black;
+    text-emphasis-color: white;
+}
+.placeholder{
+    color:#A1B5D8;
 }
 
 .btn_search{
-    font-size: 16px;
-    border:solid;
-    border-style:double;
+    font-size: 2vw;
+    font-family: quicksand, sans-serif;
     border-radius: 2cap;
-    width:100px;
+    padding-left: 2%;
+    padding-right: 2%;
     background-color: #A1B5D8;
+    color:rgba(94, 86, 113, 0.655);
 }
 .btn_search:hover{
     color: #A1B5D8;
@@ -195,53 +277,77 @@ button {
 
 .seconnecter{
     text-align: center;
+    font-family: quicksand, sans-serif;
     padding: 5px;
     font-size: 15px;
-    border:solid;
-    border-style:double;
     border-radius: 2cap;
     width:120px;
-    background-color: rgba(94, 86, 113, 0.655);
+    background-color: rgba(129, 118, 156, 0.655);
 }
 .seconnecter:hover{
-    color: #A1B5D8;
+    color: #ffffff;
 }
 
 .tabconnexion{
-    background-color:rgba(94, 86, 113, 0.554);
-    border:solid;
-    border-style:double;
+    /*background-color:rgba(94, 86, 113, 0.554);*/
+    background-color: rgba(240, 255, 255, 0.638);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    color: rgb(110, 99, 134);
     border-radius: 2cap;
     height: 210px;
     width: 420px;
     padding: 10px;
     font-size:20px;
+    font-family: quicksand, sans-serif;
 }
 
 .tabconnexion  td{
     padding: 10px; /* Ajoute un peu d espace a l interieur des cellules */
+}
+.tabconnexion input::placeholder {
+    color: rgba(129, 118, 156, 0.655);
+    font-style: italic; /* Style en italique */
+    font-size: 15px;
+    font-family: quicksand, sans-serif;
+    opacity: 80%;
 }
 
 /*    PAGE   VOYAGES     */
 
 .daate{
     border-radius: 5cap;
-    border: solid;
-    border-style: double;
-    background-color: rgba(127, 255, 212, 0.596);
-    width: 600px;
-    height: 100px;
+    font-size: 17px;
+    background-color: rgba(124, 113, 149, 0.659);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    /*width:200px;
+    height: 200px;*/
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-right: 5%;
+}
+.peoplee{
+    border-radius: 5cap;
+    font-size: 17px;
+    background-color: rgba(124, 113, 149, 0.659);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width:200px;
+    height:200px;
+    padding: 15px;
+    margin-right: 5%;
+}
+.lieuu{
+    border-radius: 5cap;
+    font-size: 17px;
+    background-color: rgba(124, 113, 149, 0.659);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width:200px;
+    height:200px;
     padding: 15px;
 }
 
-.lieuu{
-    border-radius: 5cap;
-    border: solid;
-    border-style: double;
-    background-color: rgba(174, 255, 127, 0.582);
-    width: 600px;
-    height:100px;
-    padding: 15px;
+.options-dep{
+    display:flex;
+    padding:3%;
 }
 
 #map{

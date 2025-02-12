@@ -10,19 +10,19 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
         <center><h1>Green Odyssey</h1></center>
         <center><table class="nav">
             <tr>
-                <td><a href="pageprincipale.html" >Accueil</a></td>  
-                <td><a href="presentation.html" >Présentation</a></td>
-                <td><a href="voyages.html">Voyages</a></td>
-                <td><a href="inscription.html" >S'inscrire</a></td>
-                <td><a href="connexion.html" >Se Connecter</a></td>
-                <td><a href="profil.html" ><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
-            </tr>
+                <td><a href="pageprincipale.html" class="navi">Accueil</a></td>  
+                    <td><a href="presentation.html"   class="navi">Présentation</a></td>
+                    <td><a href="voyages.html"  class="navi">Voyages</a></td>
+                    <td><a href="inscription.html"   class="navi">S'inscrire</a></td>
+                    <td><a href="connexion.html"   class="navi">Se Connecter</a></td>
+                    <td><a href="profil.html"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
+                </tr>
         </table></center></br></br></br>
 
         <form  method="post" enctype="multipart/form-data">
@@ -54,6 +54,10 @@
                 <td><input type="tel" id="num" placeholder="06..." pattern="[0-9]*" inputmode="numeric" maxlength="10"></td>
             </tr>
             <tr>
+                <td><label for="mdp"> Mot de passe :</label></td>
+                <td><input type="password" id="mdp" name="mdp" placeholder="****"></td>
+            </tr>
+            <tr>
                 <td colspan="2" align="center"> <button type="submit" class="seconnecter">S'inscrire </button></td>
             </tr>
             <tr>
@@ -61,7 +65,12 @@
             </tr>
             </table></center>
         </form>
+        <br><br>
 
+        <!-- Pied de page -->
+        <footer>
+            <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
+        </footer>
     </body>
     <div class="paysage"></div>
 </html>
