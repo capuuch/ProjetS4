@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="projetS4.css">
+
+        <title>Green Odyssey</title>
+
+        <meta charset="UTF-8">
+        <meta name=”author” content=”Anas_Capucine_Hadil”/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>Green Odyssey</h1>
+            <center><table class="nav">
+                <tr>
+                    <td><a href="index.html" class="navi">Accueil</a></td>  
+                    <td><a href="presentation.html"   class="navi">Présentation</a></td>
+                    <td><a href="voyages.html"  class="navi">Voyages</a></td>
+                    <td><a href="inscription.html"   class="navi">S'inscrire</a></td>
+                    <td><a href="connexion.html"   class="navi">Se Connecter</a></td>
+                    <td><a href="favoris.html"   class="navi">Favoris</a></td>
+                    <td><a href="profil.html"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
+                </tr>
+            </table></center>
+        </br></br><br><br>
+
+        
+
+        <center><div class="optionss">
+
+        <h2> Options de Voyage </h2>    
+        <form action="#" method="post" class="formoptions">
+            <div class="colonnes">
+                <div class="colonnegauche">
+                    <label for="voyageurs">Nombre de voyageurs :</label>
+                    <input type="number" id="voyageurs" name="voyageurs" min="1" required><br>
+                    
+                    <label for="adulte">Adultes :</label>
+                    <input type="number" id="adulte" name="adulte" min="0" required><br>
+                    
+                    <label for="enfant">Enfants :</label>
+                    <input type="number" id="enfant" name="enfant" min="0" required><br>
+                    
+                    <label for="date_debut">Dates du voyage :</label>
+                    <input type="date" id="date_debut" name="date_debut" required><br>
+                    <label for="date_fin"></label>
+                    <input type="date" id="date_fin" name="date_fin" required>
+                </div>
+                <div class="colonnedroite">
+                    
+                    <label for="hebergement">Type d'hébergement :</label>
+                    <select id="hebergement" name="hebergement">
+                        <option value="hotel">Hôtel</option>
+                        <option value="airbnb">Airbnb</option>
+                        <option value="gite">Gîte</option>
+                        <option value="insolite">Logement insolite</option>
+                    </select><br>
+                    
+                    <label for="transport">Moyen de transport :</label>
+                    <select id="transport" name="transport">
+                        <option value="aucun">Aucun</option>
+                        <option value="voiture">Voiture de location</option>
+                        <option value="velo">Vélo</option>
+                        <option value="transport_public">Transports en commun</option>
+                    </select><br>
+                    
+                    <label for="activites">Activités incluses :</label>
+                    <select id="activites" name="activites">
+                        <option value="excursion">Excursion</option>
+                        <option value="sport">Sport</option>
+                        <option value="detente">Détente</option>
+                        <option value="visite">Visite guidée</option>
+                    </select><br>
+                    
+                    <label for="repas">Repas inclus :</label>
+                    <select id="repas" name="repas">
+                        <option value="aucun">Aucun</option>
+                        <option value="petit_dej">Petit-déjeuner</option>
+                        <option value="demi_pension">Demi-pension</option>
+                        <option value="pension_complete">Pension complète</option>
+                    </select><br>
+                    
+                    <label for="assurance">Assurance voyage :</label>
+                    <select id="assurance" name="assurance">
+                        <option value="non">Non</option>
+                        <option value="oui">Oui</option>
+                        <option value="etendue">Option étendue</option>
+                    </select><br>
+                    
+                    <label for="budget">Budget approximatif :</label>
+                    <select id="budget" name="budget">
+                        <option value="standard">Standard</option>
+                        <option value="confort">Confort</option>
+                        <option value="luxe">Luxe</option>
+                    </select><br>
+                </div>
+            </div>
+            <center><button type="submit" class="seconnecter">Valider</button></center>
+        </form>
+        </div></center>
+
+
+
+        <!-- Pied de page -->
+        <footer>
+            <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
+        </footer>
+    </body>
+    <div class="paysage"></div>
+</html>
