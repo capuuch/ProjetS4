@@ -21,82 +21,101 @@
         <center><h1>Green Odyssey</h1></center>
         <center><table class="nav">
             <tr>
-                <td><a href="pageprincipale.html" class="navi">Accueil</a></td>  
-                    <td><a href="presentation.html"   class="navi">Présentation</a></td>
-                    <td><a href="voyages.html"  class="navi">Voyages</a></td>
-                    <td><a href="inscription.html"   class="navi">S'inscrire</a></td>
-                    <td><a href="connexion.html"   class="navi">Se Connecter</a></td>
-                    <td><a href="profil.html"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
-                </tr>
+                <td><a href="index.html" class="navi">Accueil</a></td>  
+                <td><a href="presentation.html"   class="navi">Présentation</a></td>
+                <td><a href="voyages.html"  class="navi">Voyages</a></td>
+                <td><a href="inscription.html"   class="navi">S'inscrire</a></td>
+                <td><a href="connexion.html"   class="navi">Se Connecter</a></td>
+                <td><a href="favoris.html"   class="navi">Favoris</a></td>
+                <td><a href="profil.html"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
+            </tr>
         </table></center></br></br>
         
-        <p> Avant de choisir votre itinéraire préféré parmi nos différentes propositions, nous vous demandons de remplir ces quelques informations importantes.</p>
+        <center><div class="normalA">
+            <p class="titress">Commencez à naviguer pour trouver votre coup de coeur</p>
+            <p class="parag">Vous pouvez ajouter les lieux qui vous intéressent le plus à vos Favoris 💜, ou alors commander dès maintenant si vous êtes sûr de vous.</p><br>
+            <button onclick="location.href='#card1'" class="seconnecter">Naviguer</button>
+        </div></center>
+        
+        <div id="card1">
+        <center><table class="tabvoyage">
+            <tr>
+                <th colspan="2"> VANCOUVER </th>
+            </tr>
 
+            <tr>
+                <td colspan="2">Un classique du Canada</td>
 
-        <center><form class="options-dep">
-            <div class="daate">
-                <label for="date-D"> Quand souhaitez-vous partir ?<br><br></label>
-                <input id="date-D" name="date-D" type="date">
-                <label for="date-Fin"></label>
-                <input id="date-Fin" name="date-Fin" type="date">
-            </div>
-            <div class="peoplee">
-                <label for="nb-people"> Combien de personnes participent à ce voyage ?<br></label>
-                <input id="nb-people" name="nb-people" type="range" value="2" step="1" min="1" max="15" oninput="this.nextElementSibling.value = this.value">
-                <output>2</output> 
-            </div>
-            <div class="peoplee">
-                <label for="buudget"> Combien de personnes participent à ce voyage ?<br></label>
-                <input id="buudget" name="buudget" type="range" value="2000" step="100" min="1700" max="5000" oninput="this.nextElementSibling.value = this.value">
-                <output>2000</output> €
-            </div>
-            
-            <div class="lieuu">
-                <label for="lieu"> Quelle région du Canada voulez-vous découvrir ?<br><br></label>
-                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Chutes du Niagara" checked="checked"> Chutes du Niagara<br>
-                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Vancouver"> Vancouver<br>
-                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Rocky Mountains"> Rocky Mountains<br>
-                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="New Brunswick"> New Brunswick<br>
-                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Alberta"> Alberta<br>
-                <input id="lieu" name="lieu" type="checkbox" multiple="multiple" value="Quebec"> Quebec<br>
-                
-            </div><br><br>
-        </form></center>
-
-            <center><div>
+                <td rowspan="2">
                 <div id="map"></div>
+                    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                    <script>
+                        // Initialiser la carte
+                        var map = L.map('map').setView([54.58, -95.69], 3); // Coordonnées du canada
 
-                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-                <script>
-                    // Initialiser la carte
-                    var map = L.map('map').setView([54.58, -95.69], 3); // Coordonnées du canada
+                        // Ajouter une couche OpenStreetMap
+                        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://carto.com/">Carto</a>'}).addTo(map);
 
-                    // Ajouter une couche OpenStreetMap
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://carto.com/">Carto</a>'}).addTo(map);
+                        // Ajouter un marqueur
+                        L.marker([43.08, -79.07]).addTo(map)
+                            .bindPopup('Chutes du niagara')
+                        L.marker([43.7, -79.42]).addTo(map)
+                            .bindPopup('Toronto')
+                        L.marker([53.93, -116.58]).addTo(map)
+                            .bindPopup('Alberta')
+                        L.marker([49.28, -123.12]).addTo(map)
+                            .bindPopup('Vancouver')
+                        L.marker([46.56, -66.64]).addTo(map)
+                            .bindPopup('New Brunswick')
+                        L.marker([51.42, -116.18]).addTo(map)
+                            .bindPopup('Rocky Mountains')
+                        L.marker([46.81, -71.21]).addTo(map)
+                            .bindPopup('Quebec')
+                    </script>
+                </div>
+                </td>
+            </tr>
 
-                    // Ajouter un marqueur
-                    L.marker([43.08, -79.07]).addTo(map)
-                        .bindPopup('Chutes du niagara')
-                    L.marker([43.7, -79.42]).addTo(map)
-                        .bindPopup('Toronto')
-                    L.marker([53.93, -116.58]).addTo(map)
-                        .bindPopup('Alberta')
-                    L.marker([49.28, -123.12]).addTo(map)
-                        .bindPopup('Vancouver')
-                    L.marker([46.56, -66.64]).addTo(map)
-                        .bindPopup('New Brunswick')
-                    L.marker([51.42, -116.18]).addTo(map)
-                        .bindPopup('Rocky Mountains')
-                    L.marker([46.81, -71.21]).addTo(map)
-                        .bindPopup('Quebec')
-                </script>
-            </div></center>
+            <tr>
+                <td colspan="2">Un classique du Canada</td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <p>wow c'est trop génial y a plein d'activités à faire youhouu </p>
+                        <img src="vavatar.jpeg" alt="picture">
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <p>wow c'est trop génial y a plein d'activités à faire youhouu </p>
+                        <img src="vavatar.jpeg" alt="picture">
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <p>aa</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p> boudi</p>
+                </td>
+                <td>
+                    <p> hgfgy</p>
+                </td>
+            </tr>
+
+        </table></center>
+        </div>
 
             
         <!-- Pied de page -->
         <footer>
             <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
         </footer>
+        
     </body>
-    <div class="paysage"></div>
+    <div class="paysagevoyages"></div>
 </html>
