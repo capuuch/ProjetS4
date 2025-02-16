@@ -272,8 +272,14 @@ footer{
     font-size: 30px;
     border-radius: 2cap;
     width:250px;
-    background-color: rgba(54, 175, 101, 0.655);
+    /*background-color: rgba(54, 175, 101, 0.655);*/
+    background-color: rgba(240, 255, 255, 0.638);
+    color: rgb(110, 99, 134);
     text-decoration: none;
+}
+.choixClient:hover{
+    color:aliceblue;
+    background-color: rgba(110, 99, 134, 0.698);
 }
 
 .choiceContainer{
@@ -607,7 +613,6 @@ button {
 }
 
 .tabconnexion{
-    /*background-color:rgba(94, 86, 113, 0.554);*/
     background-color: rgba(240, 255, 255, 0.638);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     color: rgb(110, 99, 134);
