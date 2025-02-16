@@ -21,7 +21,6 @@ h1{
     color:rgba(94, 86, 113, 0.912);
     text-transform: uppercase;
     Font-size: 325%;
-    /*text-shadow: 0px 0px 10px rgb(0, 0, 0);*/
     text-shadow: 0px 4px 10px rgba(94, 86, 113, 0.912);
 }
 
@@ -46,7 +45,7 @@ a.navi{
 a.normal{
     color: black;
 }
-a:hover{color:white}
+a:hover{color:#ffffff}
 
 td{text-align: center}
 
@@ -101,9 +100,8 @@ h2{
 
 
 footer{
-    /*background-color: rgba(0, 0, 0, 0.397);*/
     background-color:rgba(94, 86, 113, 0.912);
-    color:aliceblue;
+    color:#f0f8ff;
     text-align: center;
     padding: 10px 0;
     font-family: quicksand, sans-serif;
@@ -140,7 +138,7 @@ footer{
 .inscrire{
     background-color: rgba(240, 255, 255, 0.638);
     color: rgb(110, 99, 134);
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 5px 30px #00000099;
     border-radius: 2cap;
     height: 300px;
     width: 500px;
@@ -299,7 +297,6 @@ button {
 }
 
 .tabconnexion{
-    /*background-color:rgba(94, 86, 113, 0.554);*/
     background-color: rgba(240, 255, 255, 0.638);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     color: rgb(110, 99, 134);
@@ -396,4 +393,37 @@ html{
     width : 100%;
     height : 100%;
     z-index: -1;
+}
+
+
+/*    PAGE ADMINISTRATEUR   */
+
+.gestion{
+    text-align: center;
+    font-family: quicksand, sans-serif;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 5%;
+}
+
+.tabadmin{
+    font-family: quicksand, sans-serif;
+    font-size: 20px;
+    width:70%;
+}
+.tabadmin th{
+    text-align: center;
+    color:#3b3e58;
+    background-color:aliceblue;
+    padding:3%;
+
+}
+.tabadmin td{
+    text-align: left;
+    color: rgb(110, 99, 134);
+    background-color: rgba(240, 255, 255, 0.638);
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
