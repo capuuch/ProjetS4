@@ -28,17 +28,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promote'])) {
 
     echo "<p>L'utilisateur $emailToPromote est maintenant administrateur.</p>";
 }
+
+    $usersPerPage = 10; // Nombre d’utilisateurs par page
+    $totalUsers = count($users);
+    $totalPages = ceil($totalUsers / $usersPerPage);
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $start = ($page - 1) * $usersPerPage;
+    $usersToShow = array_slice($users, $start, $usersPerPage);
+
 ?>
 
 <!DOCTYPE html>
 <html>
-
     <head>
         <link rel="stylesheet" type="text/css" href="projetS4.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">    <!-- pour afficher l'icone du crayon pour modifier-->
 
 
         <title>Green Odyssey Administrateur</title>
+        
 
         <meta charset="UTF-8">
         <meta name=”author” content=”Anas_Capucine_Hadil”/>
@@ -80,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promote'])) {
                     <th>Actions</th>
                 </tr>
 
-                <?php foreach ($users as $user): ?>
+                <?php foreach ($usersToShow as $user): ?>
 
                 <tr>
                     <td><?php echo htmlspecialchars($user['nom']) . ' ' . htmlspecialchars($user['prenom']); ?></td>
@@ -102,7 +110,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promote'])) {
                 </tr>
                 <?php endforeach; ?>
 
-            </table></center>
+            </table></center><br><br><br>
+            
+            <center>
+            <span class="pagee">
+                <?php if ($page > 1): ?>
+                    <a href="?page=<?php echo $page - 1; ?>" class="barre">Précédent</a>
+                <?php endif; ?>
+
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                    <a href="?page=<?php echo $i; ?>" class="<?php if ($i === $page) echo 'active'; else echo 'barre'; ?>  "><?php echo $i; ?></a>
+                <?php endfor; ?>
+
+                <?php if ($page < $totalPages): ?>
+                    <a href="?page=<?php echo $page + 1; ?>"  class="barre">Suivant</a>
+                <?php endif; ?>
+            </span>
+            </center>
 
 
         <!-- Pied de page -->

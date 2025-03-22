@@ -1,4 +1,21 @@
-<?php session_start(); ?>
+<?php session_start();
+    date_default_timezone_set("Europe/Paris");
+    if (isset($_POST['nom'])){
+        $file_content= file_get_contents("data1.json");
+        $users=json_decode($file_content, true);
+
+
+        foreach ($users as $user) {
+            if (strtolower($user["email"]) == strtolower($_POST["email"])) {
+                echo "Cet email est déjà utilisé.";
+                exit;
+                header("Location: inscription.php"); // Arrêter l'exécution si un utilisateur avec ce mail existe déjà
+            }
+            header("Location: profil.php");
+        }
+
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -89,12 +106,8 @@
         $role = "normal";
 
         // Vérifier si l'email existe déjà
-        foreach ($users as $user) {
-            if ($user['email'] === $email) {
-                echo "Cet email est déjà utilisé.";
-                exit; // Arrêter l'exécution si un utilisateur avec ce mail existe déjà
-            }
-        }
+
+       
 
         // Validation de l'email
         /*if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -112,7 +125,9 @@
             "num" => $numero,
             "email" => $email,
             "mdp" => $password,
-            "role" => $role
+            "role" => $role,
+            "date_inscription" => date("Y-m-d"),
+            "derniere_connexion" => date("Y-m-d H:i:s"),
         ];
 
         // Lecture des données existantes du fichier JSON
@@ -139,7 +154,7 @@
         $_SESSION['role'] = $userData['role'];
 
         // Rediriger vers la page de profil
-        header("Location: profil.php");
+        //header("Location: profil.php");
         exit;
 
         }

@@ -1,5 +1,6 @@
 <?php 
     session_start(); 
+    date_default_timezone_set("Europe/Paris");
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,18 +63,26 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $email = htmlspecialchars($_POST["email"]);
                     $password = $_POST["mdp"];
+                    
 
                     // Vérification des identifiants
                     $file = 'data1.json';
                     if (file_exists($file)) {
                         $users = json_decode(file_get_contents($file), true);
 
-                        foreach ($users as $user) {
+                        foreach ($users as &$user) {
                             if ($user["email"] === $email && password_verify($password, $user["mdp"])) {
                                 // L'utilisateur est authentifié youhouu 
+
+                                $user["derniere_connexion"] = date("Y-m-d H:i:s");
+
+                                file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
+                                
+
                                 $_SESSION['user'] = $user; // Enregistrer toutes les informations de l'utilisateur
                                 $_SESSION['user_id'] = $user["email"]; // Stocker l'utilisateur connecté
                                 $_SESSION['role'] = $user["role"];
+                                
                                 header("Location: profil.php"); // Rediriger vers le profil
                                 exit;
                             }
