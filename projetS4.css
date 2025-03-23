@@ -605,6 +605,34 @@ button {
     background-color: rgba(94, 86, 113, 0.655);
 }
 
+.suggestion {
+    margin: 5%;
+    width: 90%;
+}
+
+.suggestions td {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+    background-color: rgba(94, 86, 113, 0.554);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    font-family: quicksand, sans-serif;
+    font-size: 20px;
+    color: #A1B5D8;
+}
+
+.suggestions a {
+    text-decoration: none;
+    color: #A1B5D8;
+    font-weight: bold;
+}
+
+.suggestions:hover {
+    background-color: #34495e;
+}
+
 
 /*     PAGE   CONNEXION    */
 
