@@ -1,0 +1,67 @@
+[
+    {
+        "voyage_id" : "1",
+        "titre" : "Vancouver",
+        "prix" : "600€",
+        "saison" : "hiver",
+        "etapes" : ["Stanley Park, Downtown, Science World"],
+        "description": "Découvrez Vancouver en hiver avec ses paysages enneigés, ses magnifiques parcs et son ambiance urbaine unique."
+    },
+    {
+        "voyage_id" : "2",
+        "titre" : "Montréal",
+        "prix" : "1200€",
+        "saison" : "hiver",
+        "etapes" : ["Jardin botanique, Planétarium Rio Tinto Alcan, Biodôme"],
+        "description": "Explorez Montréal sous la neige et profitez de ses musées interactifs, de ses espaces verts et de sa culture chaleureuse."
+    },
+    {
+        "voyage_id" : "3",
+        "titre" : "Toronto",
+        "prix" : "900€",
+        "saison" : "hiver",
+        "etapes" : ["Ripley's Aquarium of Canada, Casa Loma, Distillery District"],
+        "description": "Découvrez Toronto en hiver avec ses attractions emblématiques, son château historique et son quartier animé."
+    },
+    {
+        "voyage_id" : "4",
+        "titre" : "Chutes du Niagara",
+        "prix" : "950€",
+        "saison" : "été",
+        "etapes" : ["croisières en bateau, passage derrière les chutes, tour Skylon"],
+        "description": "Admirez les impressionnantes chutes du Niagara en été et vivez une expérience inoubliable entre nature et sensations fortes."
+
+    },
+    {
+        "voyage_id" : "5",
+        "titre" : "Alberta",
+        "prix" : "1800€",
+        "saison" : "été",
+        "etapes" : ["Banff, Calgary, Edmonton, canoë"],
+        "description" : "Profitez nananaaaa"
+    },
+    {
+        "voyage_id" : "6",
+        "titre" : "Rocky Mountains",
+        "prix" : "1300€",
+        "saison" : "été",
+        "etapes" : ["baba"],
+        "description" : "baba"
+    },
+    {
+        "voyage_id" : "7",
+        "titre" : "Terre-Neuve-et-Labrador",
+        "prix" : "1600€",
+        "saison" : "hiver",
+        "etapes" : ["trouve toi mm"],
+        "description" : "ouioui"
+    },
+    {
+        "voyage_id" : "8",
+        "titre" : "Cap Breton Highlands National Park",
+        "prix" : "1400€",
+        "saison" : "été",
+        "etapes" : ["plein de trucs bien $$"],
+        "description" : "qql part"
+    }
+]
