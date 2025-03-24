@@ -1,4 +1,47 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+$user_id = $_SESSION['user_id'];
+$users_file = 'data1.json';
+
+// Charger les users depuis data1.json
+$users = file_exists($users_file) ? json_decode(file_get_contents($users_file), true) : [];
+
+if ($users === null) {
+    die("Erreur : Impossible de lire le fichier JSON. Vérifiez sa syntaxe.");
+}
+
+foreach ($users as &$user) { //parcours des users du data.json
+    if ($user['email'] === $user_id) {
+        if (!isset($user['favoris'])) {
+            $user['favoris'] = []; //création du tableau favori pour l'user qui sera dans le data1.json
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_favori'])) {    //foncion d'ajout d'un favori
+            $voyage_nom = trim($_POST['voyage_nom']);
+            if (!empty($voyage_nom) && !in_array($voyage_nom, $user['favoris'])) {
+                $user['favoris'][] = $voyage_nom;
+            }
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimer_favori'])) {    //fonction de suppression d'un favori
+            $voyage_nom = trim($_POST['voyage_nom']);
+            $user['favoris'] = array_values(array_diff($user['favoris'], [$voyage_nom]));
+        }
+        break;
+
+        
+    }
+}
+
+
+
+// Sauvegarde des modifications
+file_put_contents($users_file, json_encode($users, JSON_PRETTY_PRINT));
+$_SESSION['user'] = $user;
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +82,33 @@
         </table></center><br><br>
 
 
-        <div class="c1">Favoris</div>
+    <div class="c1">Favoris</div>
+    <table border="1">
+        <?php
+        foreach ($users as &$user) {
+            if ($user['email'] === $user_id) { //parcours des users du data.json
+                if (!isset($user['favoris']) || empty($user['favoris'])) {
+                    echo "<tr><td colspan='2'>Aucun favori enregistré.</td></tr>";
+                } else {
+                    foreach ($user['favoris'] as $voyage_nom) {
+                        echo "<tr>";
+                        echo "<td>$voyage_nom</td>";
+                        echo "<td>
+                                <form method='POST' action='favoris.php'>
+                                    <input type='hidden' name='voyage_nom' value='$voyage_nom'>
+                                    <button type='submit' name='supprimer_favori'>❌ Supprimer</button>
+                                </form>
+                            </td>";
+                        echo "</tr>";
+                    }
+                }
+                break; 
+            }
+        }
+        ?>
+
+    </table>
     </body>
+    
     <div class="paysage"></div>
 </html>

@@ -1,4 +1,20 @@
-<?php session_start(); ?>
+<?php session_start(); 
+$isConnected = isset($_SESSION['user_id']);
+
+$voyages_file = 'voyages.json';
+
+if (file_exists($voyages_file)) {
+    $json_content = file_get_contents($voyages_file);
+    $voyages = json_decode($json_content, true);
+    
+    if (!is_array($voyages)) {
+        $voyages = []; 
+    }
+} else {
+    $voyages = [];
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -89,7 +105,22 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <?php foreach ($voyages as $voyage): ?>
+                        <?php if (isset($voyage['titre']) && $voyage['titre'] === 'Vancouver'): ?> 
+                        <?php if (isset($voyage['titre'])): ?> 
+                                <div class="voyage">
+                                    <?php if ($isConnected): ?>
+                                        <form method="POST" action="favoris.php">
+                                            <input type="hidden" name="voyage_nom" value="<?= $voyage['titre']; ?>">
+                                            <button type="submit" name="ajouter_favori" class="choixClient">💖</button>
+                                        </form>
+                                    <?php else: ?>
+                                        <a href="connexion.php"><button>💖</button></a>
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                     <button onclick="location.href='#v2'" class="choixClient">Swipe</button>
                 </div>
         </div>
@@ -127,7 +158,11 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <form method="post" action="favoris.php">
+                        <input type="hidden" name="voyage" value="Quebec"> 
+                        <button type="submit" class="choixClient">💖</button>
+                    </form>
+
                     <button onclick="location.href='#v3'" class="choixClient">Swipe</button>
                 </div>
         </div>
@@ -163,7 +198,11 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <form method="post" action="favoris.php">
+                        <input type="hidden" name="voyage" value="Toronto"> 
+                        <button type="submit" class="choixClient">💖</button>
+                    </form>
+
                     <button onclick="location.href='#v4'" class="choixClient">Swipe</button>
                 </div>
         </div>
@@ -201,7 +240,11 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <form method="post" action="favoris.php">
+                        <input type="hidden" name="voyage" value="Niagara"> 
+                        <button type="submit" class="choixClient">💖</button>
+                    </form>
+
                     <button onclick="location.href='#v5'" class="choixClient">Swipe</button>
                 </div>
         </div>
@@ -239,7 +282,11 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <form method="post" action="favoris.php">
+                        <input type="hidden" name="voyage" value="Alberta"> 
+                        <button type="submit" class="choixClient">💖</button>
+                    </form>
+
                     <button onclick="location.href='#v6'" class="choixClient">Swipe</button>
                 </div>
         </div>
@@ -277,7 +324,11 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <form method="post" action="favoris.php">
+                        <input type="hidden" name="voyage" value="Rocky Mountains"> 
+                        <button type="submit" class="choixClient">💖</button>
+                    </form>
+
                     <button onclick="location.href='#v7'" class="choixClient">Swipe</button>
                 </div>
         </div>
@@ -315,7 +366,11 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <form method="post" action="favoris.php">
+                        <input type="hidden" name="voyage" value="Terre-Neuve-et-Labrador"> 
+                        <button type="submit" class="choixClient">💖</button>
+                    </form>
+
                     <button onclick="location.href='#v8'" class="choixClient">Swipe</button>
                 </div>
         </div>
@@ -353,7 +408,11 @@
                 Periode d'activié : toute l'année</div>
                 <div class = choiceContainer>
                     <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
+                    <form method="post" action="favoris.php">
+                        <input type="hidden" name="voyage" value="Cape Breton Highlands National Park"> 
+                        <button type="submit" class="choixClient">💖</button>
+                    </form>
+
                     <button onclick="location.href='#v1'" class="choixClient">Swipe</button>
                 </div>
             </div>
