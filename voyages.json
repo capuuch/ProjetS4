@@ -1,67 +1,99 @@
 [
     {
-        "voyage_id" : "1",
-        "titre" : "Vancouver",
-        "prix" : "600€",
-        "saison" : "hiver",
-        "etapes" : ["Stanley Park, Downtown, Science World"],
-        "description": "Découvrez Vancouver en hiver avec ses paysages enneigés, ses magnifiques parcs et son ambiance urbaine unique."
+        "voyage_id": 1,
+        "titre": "Vancouver",
+        "prix": 1500,
+        "saison": "Hiver",
+        "duree": "5 jours",
+        "date_debut": "2025-12-10",
+        "date_fin": "2025-12-14",
+        "description": "Plongez dans la magie de Vancouver en hiver. Découvrez la ville, ses paysages enneigés et ses magnifiques parcs, ainsi que des activités en plein air comme le ski et la randonnée.",
+        "image_fond": "https://www.alltrails.com/_next/image?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMjIxODY4NTAvYTIyYWY4YTMzYWY3MmE5MGEwMmY1YzNlODdhNjMzODkuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsLCJqcGVnIjp7InRyZWxsaXNRdWFudGlzYXRpb24iOnRydWUsIm92ZXJzaG9vdERlcmluZ2luZyI6dHJ1ZSwib3B0aW1pc2VTY2FucyI6dHJ1ZSwicXVhbnRpc2F0aW9uVGFibGUiOjN9fX0%3D&w=3840&q=75",
+        "status": "en cours",
+        "etapes_ids" : [11, 12, 13]
     },
     {
-        "voyage_id" : "2",
-        "titre" : "Montréal",
-        "prix" : "1200€",
-        "saison" : "hiver",
-        "etapes" : ["Jardin botanique, Planétarium Rio Tinto Alcan, Biodôme"],
-        "description": "Explorez Montréal sous la neige et profitez de ses musées interactifs, de ses espaces verts et de sa culture chaleureuse."
+        "voyage_id": 2,
+        "titre": "Québec",
+        "prix": 1400,
+        "saison": "Hiver",
+        "duree": "2 semaines",
+        "date_debut": "2025-01-15",
+        "date_fin": "2025-01-21",
+        "description": "Explorez la ville de Québec en hiver, avec ses paysages enneigés et son architecture historique.",
+        "image_fond" : "https://www.alltrails.com/_next/image?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNTE1MzYwNjAvYWFhNmUwZmFhYTU3MmZiNjViMzMxNjU0ZmQzNGI0OTguanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsLCJqcGVnIjp7InRyZWxsaXNRdWFudGlzYXRpb24iOnRydWUsIm92ZXJzaG9vdERlcmluZ2luZyI6dHJ1ZSwib3B0aW1pc2VTY2FucyI6dHJ1ZSwicXVhbnRpc2F0aW9uVGFibGUiOjN9fX0%3D&w=3840&q=90",
+        "etapes_ids" : [21, 22, 23]
     },
     {
-        "voyage_id" : "3",
-        "titre" : "Toronto",
-        "prix" : "900€",
-        "saison" : "hiver",
-        "etapes" : ["Ripley's Aquarium of Canada, Casa Loma, Distillery District"],
-        "description": "Découvrez Toronto en hiver avec ses attractions emblématiques, son château historique et son quartier animé."
+        "voyage_id": 3,
+        "titre": "Toronto",
+        "prix": 1500,
+        "saison": "Été",
+        "duree": "1 semaine",
+        "date_debut": "2025-07-01",
+        "date_fin": "2025-07-07",
+        "description": "Venez découvrir Toronto en été, entre culture urbaine, paysages naturels et patrimoine historique.",
+        "image_fond" : "https://cdn.juliekinnear.com/imagesall/2017/10/Crothers-Woods-1.jpg",
+        "etapes_ids" : [31, 32, 33]
     },
     {
-        "voyage_id" : "4",
-        "titre" : "Chutes du Niagara",
-        "prix" : "950€",
-        "saison" : "été",
-        "etapes" : ["croisières en bateau, passage derrière les chutes, tour Skylon"],
-        "description": "Admirez les impressionnantes chutes du Niagara en été et vivez une expérience inoubliable entre nature et sensations fortes."
-
+        "voyage_id": 4,
+        "titre": "Chutes du Niagara",
+        "prix": 1500,
+        "saison": "Été",
+        "duree": "3 semaines",
+        "date_debut": "2025-08-10",
+        "date_fin": "2025-08-12",
+        "description": "Admirez les impressionnantes chutes du Niagara en été et vivez une expérience inoubliable entre nature et sensations fortes.",
+        "image_fond": "https://www.terra-canada.com/wp-content/uploads/banner-terra-canada-002.jpg",
+        "etapes_ids": [41, 42, 43]
     },
     {
-        "voyage_id" : "5",
-        "titre" : "Alberta",
-        "prix" : "1800€",
-        "saison" : "été",
-        "etapes" : ["Banff, Calgary, Edmonton, canoë"],
-        "description" : "Profitez nananaaaa"
+        "voyage_id": 5,
+        "titre": "Alberta",
+        "prix": 1800,
+        "saison": "Été",
+        "duree": "1 semaine",
+        "date_debut": "2025-06-15",
+        "date_fin": "2025-06-21",
+        "description": "Découvrez la beauté sauvage de l'Alberta, avec ses montagnes majestueuses, ses lacs turquoise et ses vastes prairies.",
+        "image_fond" : "https://afar.brightspotcdn.com/dims4/default/aad7744/2147483647/strip/true/crop/2000x1061+0+132/resize/1440x764!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F92%2F8c%2Fd4930cc42bfdd35bb4d287cfa2e8%2Foriginal-banff-lake-louise-canada.jpg",
+        "etapes_ids": [51, 52, 53]
     },
     {
-        "voyage_id" : "6",
-        "titre" : "Rocky Mountains",
-        "prix" : "1300€",
-        "saison" : "été",
-        "etapes" : ["baba"],
-        "description" : "baba"
+        "voyage_id": 6,
+        "titre": "Rocky Mountains",
+        "prix": 1300,
+        "saison": "Été",
+        "duree": "2 semaines",
+        "date_debut": "2025-07-20",
+        "date_fin": "2025-07-24",
+        "description": "Partez à l'aventure dans les Rocheuses canadiennes et explorez des paysages époustouflants entre randonnées et faune sauvage.",
+        "image_fond": "https://i0.wp.com/deventuretime.com/wp-content/uploads/2020/11/connor-jolley-Y6I4VvyN_sA-unsplash__1605743326_72.139.194.70.jpg?resize=800%2C533&ssl=1",
+        "etapes_ids": [61, 62, 63]
     },
     {
-        "voyage_id" : "7",
-        "titre" : "Terre-Neuve-et-Labrador",
-        "prix" : "1600€",
-        "saison" : "hiver",
-        "etapes" : ["trouve toi mm"],
-        "description" : "ouioui"
+        "voyage_id": 7,
+        "titre": "Terre-Neuve-et-Labrador",
+        "prix": 1600,
+        "saison": "Hiver",
+        "duree": "3 semaines",
+        "date_debut": "2025-12-05",
+        "date_fin": "2025-12-11",
+        "description": "Explorez les paysages spectaculaires et la culture unique de Terre-Neuve-et-Labrador en hiver.",
+        "image_fond": "https://lirp.cdn-website.com/210d2569/dms3rep/multi/opt/Pour+SEO+-+Gros+Morne-1920w.jpg",
+        "etapes_ids": [71, 72, 73]
     },
     {
-        "voyage_id" : "8",
-        "titre" : "Cap Breton Highlands National Park",
-        "prix" : "1400€",
-        "saison" : "été",
-        "etapes" : ["plein de trucs bien $$"],
-        "description" : "qql part"
+        "voyage_id": 8,
+        "titre": "Cap Breton Highlands National Park",
+        "prix": 1400,
+        "saison": "Été",
+        "duree": "1 semaine",
+        "date_debut": "2025-09-10",
+        "date_fin": "2025-09-13",
+        "description": "Découvrez les paysages côtiers spectaculaires et les randonnées exceptionnelles du parc national des Hautes-Terres du Cap-Breton.",
+        "image_fond": "https://novascotia.com/wp-content/uploads/2024/09/37823.webp",
+        "etapes_ids": [81, 82, 83]
     }
 ]

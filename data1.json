@@ -6,35 +6,12 @@
         "num": "5",
         "email": "non",
         "mdp": "$2y$10$Cebb209Yw60mDTvif83dA.1git2abumYB7lnaefgz21R2XZmRBIDq",
-        "role": "admin"
-    },
-    {
-        "genre": "homme",
-        "nom": "b",
-        "prenom": "n",
-        "num": "0",
-        "email": "n",
-        "mdp": "$2y$10$WCO1II3bEvyeWHKY8YELdeYT8aS4xL2D7OvDKO4Hbr4GeZ7E5zl9y",
         "role": "admin",
-        "derniere_connexion": "2025-03-20 14:59:05"
-    },
-    {
-        "genre": "femme",
-        "nom": "ana",
-        "prenom": "ana",
-        "num": "06",
-        "email": "ana",
-        "mdp": "$2y$10$cmFiyQMNMuGViSfBb5M9ruwgFsVjU3MIZ3tVKBvu5sNlVv02u0vZ2",
-        "role": "admin"
-    },
-    {
-        "genre": "homme",
-        "nom": "i!u",
-        "prenom": "uh",
-        "num": "0",
-        "email": "uhy",
-        "mdp": "$2y$10$dOxV8YRLwXZrhznhPuiGU.JZ400exbykoZ1o8ydQkofsteHQXcVla",
-        "role": "admin"
+        "derniere_connexion": "2025-03-24 17:23:19",
+        "favoris": [
+            "Qu\u00e9bec",
+            "Toronto"
+        ]
     },
     {
         "genre": "homme",
@@ -255,5 +232,20 @@
         "role": "admin",
         "date_inscription": "2025-03-20",
         "derniere_connexion": "2025-03-20 14:51:20"
+    },
+    {
+        "genre": "homme",
+        "nom": "s",
+        "prenom": "s",
+        "num": "4",
+        "email": "s",
+        "mdp": "$2y$10$JaVYkxRFhwU3eQdILiHZi.4LWAQ6H.KRTEck4VWlO0x53MSel6WCe",
+        "role": "admin",
+        "date_inscription": "2025-03-23",
+        "derniere_connexion": "2025-03-24 16:33:00",
+        "favoris": [
+            "Vancouver",
+            "Cap Breton Highlands National Park"
+        ]
     }
 ]

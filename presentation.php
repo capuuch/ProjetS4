@@ -1,17 +1,18 @@
 <?php 
     session_start(); 
-
-    // Charger les voyages depuis voyages.json
+    $etapes_file='etapes.json';
     $voyages = json_decode(file_get_contents('voyages.json'), true);
+    $etapes = json_decode(file_get_contents('etapes.json'), true);
+    
 
-    // Récupérer le mot-clé saisi dans le formulaire
+    // Recuperer le mot-cle
     $motCle = isset($_GET['recherche']) ? strtolower(trim($_GET['recherche'])) : '';
 
-    // Initialiser un tableau pour stocker les résultats
+    // Initialiser un tableau pour stocker les resultats
     $resultats = [];
 
-    // Vérifier si l'utilisateur a appuyé sur le bouton "Rechercher"
-    $formulaireSoumis = isset($_GET['rechercher']) || isset($_GET['recherche']);  // Vérifier si 'rechercher' est dans $_GET, donc si le bouton a été pressé
+    // Verifier si l'utilisateur a appuye sur le bouton "Rechercher"
+    $formulaireSoumis = isset($_GET['rechercher']) || isset($_GET['recherche']);
 
     if ($formulaireSoumis) {
         if ($motCle !== '') {
@@ -28,7 +29,16 @@
                         $titre = isset($voyage['titre']) ? strtolower($voyage['titre']) : '';
                         $saison = isset($voyage['saison']) ? strtolower($voyage['saison']) : '';
                         $prix = isset($voyage['prix']) ? strtolower($voyage['prix']) : '';
-                        $etapes = isset($voyage['etapes']) && is_array($voyage['etapes']) ? implode(' ', $voyage['etapes']) : '';
+                        if (file_exists($etapes_file)) {
+                            $json_content = file_get_contents($etapes_file);
+                            $etapes = json_decode($json_content, true);
+                            
+                            if (!is_array($etapes)) {
+                                $etapes = []; 
+                            }
+                        } else {
+                            $etapes = [];
+                        }
                         $description = isset($voyage['description']) ? strtolower($voyage['description']) : '';
 
                         // Si un des champs du voyage correspond au mot-clé
@@ -36,7 +46,6 @@
                             strpos($titre, $mot) !== false ||
                             strpos($saison, $mot) !== false ||
                             strpos($prix, $mot) !== false ||
-                            strpos(strtolower($etapes), $mot) !== false ||
                             strpos($description, $mot) !== false
                         ) {
                             // Ajouter ce voyage aux résultats
@@ -49,20 +58,20 @@
             }
         } else {
             // Si aucun mot-clé, on affiche une sélection aléatoire de 5 voyages
-            $resultats = array_slice($voyages, 0, 5);
             shuffle($voyages);
+            $resultats = array_slice($voyages, 0, 5);
             $motCle = '';
         }
 
         if (empty($resultats)) {
-            $resultats = array_slice($voyages, 0, 5);
             shuffle($voyages);
+            $resultats = array_slice($voyages, 0, 5);
             $motCle = '';
         }
     }
 
     //pagination
-    $voyagesPerPage = 3; // Nb d’utilisateurs par page
+    $voyagesPerPage = 3; // Nb max d’utilisateurs par page
     $totalvoyages = count($resultats);
     $totalPages = ceil($totalvoyages / $voyagesPerPage);
     $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
@@ -136,8 +145,27 @@
                             <tr class="suggestions">
                                 <td><strong><?= htmlspecialchars($voyage['titre']) ?></strong></td>
                                 <td>Saison : <?= htmlspecialchars($voyage['saison']) ?></td>
-                                <td>Prix : <?= htmlspecialchars($voyage['prix']) ?></td>
-                                <td>Étapes : <?= htmlspecialchars(implode(', ', $voyage['etapes'])) ?></td>
+                                <td>Prix : <?= htmlspecialchars($voyage['prix']) ?>€</td>
+                                <td>Étapes : 
+                                    <?php
+                                        // Vérifier si le voyage a des étapes associées
+                                        if (!empty($voyage['etapes_ids'])) {
+                                            $etapes_titles = [];
+
+                                            // Parcourir toutes les étapes et récupérer celles du voyage en cours
+                                            foreach ($etapes as $etape) {
+                                                if (in_array($etape['etape_id'], $voyage['etapes_ids'])) {
+                                                    $etapes_titles[] = htmlspecialchars($etape['titre']);
+                                                }
+                                            }
+
+                                            // Afficher les titres des étapes séparés par une virgule
+                                            echo implode(', ', $etapes_titles);
+                                        } else {
+                                            echo "Aucune étape associée";
+                                        }
+                                    ?>
+                                </td>
                                 <td><a href="voyages.php#v<?= $voyage['voyage_id'] ?>">Voir les détails</a></td>
                             </tr>
                         <?php endforeach; ?>

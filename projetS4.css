@@ -76,7 +76,6 @@ h1{
     color:rgba(94, 86, 113, 0.912);
     text-transform: uppercase;
     Font-size: 325%;
-    /*text-shadow: 0px 0px 10px rgb(0, 0, 0);*/
     text-shadow: 0px 4px 10px rgba(94, 86, 113, 0.912);
 }
 
@@ -86,7 +85,6 @@ h4{
     color:rgba(255, 255, 255, 0.912);
     text-transform: uppercase;
     Font-size: 325%;
-    /*text-shadow: 0px 0px 10px rgb(0, 0, 0);*/
     text-shadow: 0px 4px 10px rgba(94, 86, 113, 0.912);
     padding: 0;
     margin: 0;
@@ -157,6 +155,7 @@ h2{
 .parag{
     font-size: 2vw;
     color: aliceblue;
+    font-family: quicksand, sans-serif;
 }
 
 .presentationn{
@@ -199,7 +198,7 @@ footer{
     z-index: -1;
 }
 
-/*Interface "tinder voyages" - VOYAGES*/
+/*     PAGE  VOYAGES     */
 
 .interface {
     display: flex;
@@ -221,27 +220,13 @@ footer{
     font-size: 24px;
     color:#ffffff;
     text-shadow: 1px 10px 10px rgb(0, 0, 0);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.836);
-    border-radius:4cap;
-    background-color: rgba(39, 39, 39, 0.39);
-    margin:0;
-    padding:0;
+    margin-bottom:55vh;
 }
 
 .photoContainer{
     display: flex;
     width: 100%;
     height: auto;
-}
-
-.divTextLeft{
-    width: 65%;
-    height: 100%;
-    font-family: "Quicksand", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    font-size: 24px;
 }
 
 .buttonPhotos{
@@ -265,7 +250,7 @@ footer{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-#map, #map2, #map3, #map4, #map5, #map6, #map7, #map8{
+#map1, #map2, #map3, #map4, #map5, #map6, #map7, #map8{
     display: flex;
     justify-content: flex-end;
     height: auto;
@@ -281,7 +266,6 @@ footer{
     font-size: 30px;
     border-radius: 2cap;
     width:250px;
-    /*background-color: rgba(54, 175, 101, 0.655);*/
     background-color: rgba(240, 255, 255, 0.638);
     color: rgb(110, 99, 134);
     text-decoration: none;
@@ -315,120 +299,35 @@ html{
     z-index: -1;
 }
 
+.deetails {
+    padding: 5px;
+    flex: 1; /* Permet aux éléments de s’adapter à la largeur */
+}
+
 .details{
+    display: flex;  /* Active Flexbox */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    align-items: center; /* Aligne verticalement */
     font-family: "Montserrat", serif;
     text-align: center;
     font-size: 150%;
-    font-weight:bolder;
-    padding-top: 10px;
+    font-weight:bold;
     text-transform: uppercase;
     color: #ffffff;
-    font-weight: 200;
+    font-weight: 300;
 }
 
-.rando1{
+.rando {
     display: flex;
     flex-direction: column;
     position: relative;
-    top:0;
-    left:0;
     width: 100%;
     min-height: 100vh;
-    background: url("https://www.alltrails.com/_next/image?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMjIxODY4NTAvYTIyYWY4YTMzYWY3MmE5MGEwMmY1YzNlODdhNjMzODkuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsLCJqcGVnIjp7InRyZWxsaXNRdWFudGlzYXRpb24iOnRydWUsIm92ZXJzaG9vdERlcmluZ2luZyI6dHJ1ZSwib3B0aW1pc2VTY2FucyI6dHJ1ZSwicXVhbnRpc2F0aW9uVGFibGUiOjN9fX0%3D&w=3840&q=75") no-repeat center center;
     background-size: cover;
+    background-position: center;
     z-index: -1;
-}
-
-.rando2{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://www.alltrails.com/_next/image?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNTE1MzYwNjAvYWFhNmUwZmFhYTU3MmZiNjViMzMxNjU0ZmQzNGI0OTguanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsLCJqcGVnIjp7InRyZWxsaXNRdWFudGlzYXRpb24iOnRydWUsIm92ZXJzaG9vdERlcmluZ2luZyI6dHJ1ZSwib3B0aW1pc2VTY2FucyI6dHJ1ZSwicXVhbnRpc2F0aW9uVGFibGUiOjN9fX0%3D&w=3840&q=90") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-    padding:0;
-    margin:0;
-}
-
-.rando3{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://cdn.juliekinnear.com/imagesall/2017/10/Crothers-Woods-1.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-}
-
-.rando4{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://www.terra-canada.com/wp-content/uploads/banner-terra-canada-002.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-}
-
-.rando5{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://afar.brightspotcdn.com/dims4/default/aad7744/2147483647/strip/true/crop/2000x1061+0+132/resize/1440x764!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F92%2F8c%2Fd4930cc42bfdd35bb4d287cfa2e8%2Foriginal-banff-lake-louise-canada.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-}
-
-.rando6{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://i0.wp.com/deventuretime.com/wp-content/uploads/2020/11/connor-jolley-Y6I4VvyN_sA-unsplash__1605743326_72.139.194.70.jpg?resize=800%2C533&ssl=1") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-}
-
-.rando7{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://lirp.cdn-website.com/210d2569/dms3rep/multi/opt/Pour+SEO+-+Gros+Morne-1920w.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-}
-.rando8{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://novascotia.com/wp-content/uploads/2024/09/37823.webp") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
+    padding: 0;
+    margin: 0;
 }
 
 h1, .nav {
@@ -611,13 +510,13 @@ button {
 }
 
 .suggestions td {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     padding-left: 2%;
     padding-right: 2%;
     
     background-color: rgba(94, 86, 113, 0.554);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);*/
     font-family: quicksand, sans-serif;
     font-size: 20px;
     color: #A1B5D8;
@@ -627,6 +526,9 @@ button {
     text-decoration: none;
     color: #A1B5D8;
     font-weight: bold;
+}
+.suggestions a:hover{
+    color: aliceblue;
 }
 
 .suggestions:hover {
@@ -685,49 +587,6 @@ button {
     color:#3b3e58;
 }
 
-/*    PAGE   VOYAGES     */
-
-.daate{
-    border-radius: 5cap;
-    font-size: 17px;
-    background-color: rgba(124, 113, 149, 0.659);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    /*width:200px;
-    height: 200px;*/
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-right: 5%;
-}
-.peoplee{
-    border-radius: 5cap;
-    font-size: 17px;
-    background-color: rgba(124, 113, 149, 0.659);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    width:200px;
-    height:200px;
-    padding: 15px;
-    margin-right: 5%;
-}
-.lieuu{
-    border-radius: 5cap;
-    font-size: 17px;
-    background-color: rgba(124, 113, 149, 0.659);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    width:200px;
-    height:200px;
-    padding: 15px;
-}
-
-.tabvoyage{
-    width:100%;
-    height:100%;
-    
-    font-family: quicksand, sans-serif;
-}
-
-.tabvoyage td{
-    border: solid 1px black;
-}
 
 
 /*    PAGE ADMINISTRATEUR   */
@@ -785,6 +644,7 @@ button {
 
 
 /*    PAGE   OPTIONS   */
+
 .optionss{
     font-family: quicksand, sans-serif;
     background-color: rgba(240, 255, 255, 0.638);
@@ -821,4 +681,39 @@ input, select{
     width: 48%;
     display: flex;
     flex-direction: column;
+}
+
+
+/*      PAGE FAVORIS     */
+
+.tabadmin a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(110, 99, 134);
+    cursor: pointer;
+}
+
+.tabadmin a:hover{
+    color:aliceblue;
+}
+
+.suppr button{
+    font-family: quicksand, sans-serif;
+    font-size: 20px;
+    color: rgb(110, 99, 134);
+    cursor: pointer;
+    align-items: center;
+}
+.suppr button:hover{
+    color:aliceblue;
+}
+
+.tabadmin td:first-child, 
+.tabadmin td:last-child {
+    text-align: center; /* Centre le texte horizontalement */
+    vertical-align: middle;
+}
+
+.tabadmin th {
+    white-space: nowrap; /* Empêche le passage à la ligne */
 }

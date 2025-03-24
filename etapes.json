@@ -1,0 +1,306 @@
+[
+    {
+        "etape_id": 11,
+        "titre": "Stanley Park",
+        "prix": 100,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "date_arrivee": "2025-12-10",
+        "date_depart": "2025-12-10",
+        "options": {
+            "activité": "Visite d'un parc",
+            "hebergement": "Hôtel avec vue sur les montagnes",
+            "transport": "métro"
+        }
+    },
+    {
+        "etape_id": 12,
+        "titre": "Grouse Mountain",
+        "prix": 300,
+        "nb_personnes": 6,
+        "duree": "1 journée",
+        "date_arrivee": "2025-12-11",
+        "date_depart": "2025-12-11",
+        "options": {
+            "activité": "Ski ou Snowboard",
+            "hebergement": "Chalet de montagne cosy",
+            "transport": "navette"
+        }
+    },
+    {
+        "etape_id": 13,
+        "titre": "Capilano Suspension Bridge",
+        "prix": 50,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Randonnée hivernale",
+            "hebergement": "Hôtel 3 étoiles",
+            "transport": "Navette privée"
+        }
+    },
+    
+    
+    {
+        "etape_id": 21,
+        "titre": "Québec Cité",
+        "prix": 25,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Visite guidée de la vieille ville",
+            "hebergement": "Auberge de jeunesse",
+            "transport": "Métro"
+        }
+    },
+    {
+        "etape_id": 22,
+        "titre": "Place Royale",
+        "prix": 15,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Visite du quartier historique",
+            "hebergement": "Appartement en centre-ville",
+            "transport": "Métro"
+        }
+    },
+    {
+        "etape_id": 23,
+        "titre": "Place d'Armes",
+        "prix": 20,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Visite guidée encore",
+            "hebergement": "Maison de vacances au bord de l'eau",
+            "transport": "Ferry"
+        }
+    },
+    
+    {
+        "etape_id": 31,
+        "titre": "High Park",
+        "prix": 200,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Balade dans le parc",
+            "hebergement": "Appartement avec vue sur la ville",
+            "transport": "Métro"
+        }  
+    },
+    {
+        "etape_id": 32,
+        "titre": "Toronto Islands",
+        "prix": 30,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Visite des galeries d'art",
+            "hebergement": "Hôtel design en centre-ville",
+            "transport": "Métro"
+        }
+    },
+    {
+        "etape_id": 33,
+        "titre": "Toronto Zoo",
+        "prix": 30,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Découverte de la faune",
+            "hebergement": "Hôtel familial",
+            "transport": "Métro"
+        }
+    },
+    
+    
+    {
+        "etape_id": 41,
+        "titre": "Croisières en bateau",
+        "prix": 500, 
+        "nb_personnes": 6,
+        "duree": "1 journée",
+        "options": {
+            "activité": "Croisière sur le fleuve Niagara",
+            "hebergement": "Hôtel avec vue sur les chutes",
+            "transport": "Navette"
+        }
+    },
+    {
+        "etape_id": 42,
+        "titre": "Passage derrière les chutes",
+        "prix": 30,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Visite des grottes",
+            "hebergement": "Hôtel 4 étoiles",
+            "transport": "Navette"
+        }
+    },
+    {
+        "etape_id": 43,
+        "titre": "Tour Skylon",
+        "prix": 200,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Observation panoramique en hélicoptère",
+            "hebergement": "Hôtel de luxe",
+            "transport": "Navette"
+        }
+    },
+    
+    {
+        "etape_id": 51,
+        "titre": "Banff",
+        "prix": 30,
+        "nb_personnes": 6,
+        "duree": "1 journée",
+        "options": {
+            "activité": "Randonnée dans le parc national",
+            "hebergement": "Chalet en montagne",
+            "transport": "Voiture de location"
+        }
+    }
+    ,
+    {
+        "etape_id": 52,
+        "titre": "Calgary",
+        "prix": 40,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Visite du centre-ville",
+            "hebergement": "Appartement en centre-ville",
+            "transport": "Métro"
+        }
+    },
+    {
+        "etape_id": 53,
+        "titre": "Edmonton",
+        "prix": 60,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Visite du centre-ville et du musée",
+            "hebergement": "Hôtel design",
+            "transport": "Métro"
+        }
+    },
+    
+    {
+        "etape_id": 61,
+        "titre": "Rocky Mountains National Park",
+        "prix": 60,
+        "nb_personnes": 6,
+        "duree":"1 journée",
+        "options": {
+            "activité": "Randonnée dans le parc national",
+            "hebergement": "Chalet en montagne",
+            "transport": "Voiture de location"
+        }
+    },
+    {
+        "etape_id": 62,
+        "titre": "lake louise",
+        "prix": 180,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Kayak dans le lac",
+            "hebergement": "Chalet en montagne",
+            "transport": "Voiture de location"
+        }
+    },
+    {
+        "etape_id": 63,
+        "titre": "Jasper",
+        "prix": 30,
+        "nb_personnes": 6,
+        "duree": "1 journée",
+        "options": {
+            "activité": "Randonnée dans le parc national",
+            "hebergement": "Chalet en montagne",
+            "transport": "Voiture de location"
+        }
+    },
+    
+    {
+        "etape_id": "71",
+        "titre": "Observation des balaines",
+        "prix": 30,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Croisière pour observer les baleines",
+            "hebergement": "Hôtel avec vue sur la mer",
+            "transport": "Navette"
+        }
+    }
+    ,
+    {
+        "etape_id": "72",
+        "titre": "Parc national de Gros Morne",
+        "prix": 100,
+        "nb_personnes": 6,
+        "duree": "1 journée",
+        "options": {
+            "activité": "Randonnée dans le parc national",
+            "hebergement": "Chalet en montagne",
+            "transport": "Voiture de location"
+        }
+    },
+    {
+        "etape_id": "73",
+        "titre": "Parc nationnal de Gros Morne - Fjords de l'Est",
+        "prix": 0,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Croisière dans les fjords",
+            "hebergement": "Hôtel avec vue sur les fjords",
+            "transport": "Navette"
+        }
+    },
+    
+    {
+        "etape_id": "81",
+        "titre": "cap breton highlands national park",
+        "prix": 80,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Randonnée dans le parc national",
+            "hebergement": "Chalet en montagne",
+            "transport": "Voiture de location"
+        }
+    },
+    {
+        "etape_id": "82",
+        "titre": "cap breton highlands national park",
+        "prix": 250,
+        "nb_personnes": 6,
+        "duree": "1 journée",
+        "options": {
+            "activité": "Survie en forêt",
+            "hebergement": "Camping sauvage",
+            "transport": "ligne 7"
+        }
+    },
+    {
+        "etape_id": "83",
+        "titre": "cap breton highlands national park",
+        "prix": 60,
+        "nb_personnes": 6,
+        "duree": "1/2 journée",
+        "options": {
+            "activité": "Séance photo du paysage et des animaux", 
+            "hebergement": "Chalet en montagne",
+            "transport": "RER B"
+        }
+    }
+    
+    ]

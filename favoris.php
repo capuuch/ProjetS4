@@ -3,9 +3,24 @@ session_start();
 
 $user_id = $_SESSION['user_id'];
 $users_file = 'data1.json';
+$etapes_file = 'etapes.json';
+
+$voyages = json_decode(file_get_contents('voyages.json'), true);
+
+if (file_exists($etapes_file)) {
+    $json_content = file_get_contents($etapes_file);
+    $etapes = json_decode($json_content, true);
+    
+    if (!is_array($etapes)) {
+        $etapes = []; 
+    }
+} else {
+    $etapes = [];
+}
 
 // Charger les users depuis data1.json
 $users = file_exists($users_file) ? json_decode(file_get_contents($users_file), true) : [];
+
 
 if ($users === null) {
     die("Erreur : Impossible de lire le fichier JSON. Vérifiez sa syntaxe.");
@@ -39,6 +54,7 @@ foreach ($users as &$user) { //parcours des users du data.json
 // Sauvegarde des modifications
 file_put_contents($users_file, json_encode($users, JSON_PRETTY_PRINT));
 $_SESSION['user'] = $user;
+
 ?>
 
 
@@ -79,36 +95,86 @@ $_SESSION['user'] = $user;
                 <?php endif; ?>
                 
             </tr>
-        </table></center><br><br>
+        </table></center>
+        <p class="gestion">Vos voyages favoris 💖</p>
 
-
-    <div class="c1">Favoris</div>
-    <table border="1">
+        <center>
         <?php
-        foreach ($users as &$user) {
-            if ($user['email'] === $user_id) { //parcours des users du data.json
-                if (!isset($user['favoris']) || empty($user['favoris'])) {
-                    echo "<tr><td colspan='2'>Aucun favori enregistré.</td></tr>";
-                } else {
-                    foreach ($user['favoris'] as $voyage_nom) {
-                        echo "<tr>";
-                        echo "<td>$voyage_nom</td>";
-                        echo "<td>
-                                <form method='POST' action='favoris.php'>
-                                    <input type='hidden' name='voyage_nom' value='$voyage_nom'>
-                                    <button type='submit' name='supprimer_favori'>❌ Supprimer</button>
-                                </form>
-                            </td>";
-                        echo "</tr>";
+            // Verifier si l'utilisateur a des favoris
+            $favoris_affiches = [];
+            foreach ($users as &$user) {
+                if ($user['email'] === $user_id) {
+                    if (isset($user['favoris']) && !empty($user['favoris'])) {
+                        foreach ($user['favoris'] as $voyage_nom) {
+                            foreach ($voyages as $voyage) { 
+                                if ($voyage['titre'] === $voyage_nom) {
+                                    $favoris_affiches[] = $voyage; 
+                                    break; 
+                                }
+                            }
+                        }
                     }
+                    break;
                 }
-                break; 
             }
-        }
         ?>
 
-    </table>
+        <?php if (empty($favoris_affiches)): ?>
+            <p class="parag">Aucun favori enregistré.</p>
+        <?php else: ?>
+            <table class="tabadmin">
+                <tr>
+                    <th>Voyage</th>
+                    <th>Prix</th>
+                    <th>Etapes</th>
+                    <th>Infos en +</th>
+                    <th>Actions</th>
+                </tr>
+                <?php foreach ($favoris_affiches as $voyage): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($voyage['titre']) ?></td>
+                        <td> <?= htmlspecialchars($voyage['prix'] ?? 'Non spécifié') ?> €</td>
+                        <td> 
+                        <?php
+                        // Vérifier si le voyage a des étapes associées
+                        if (!empty($voyage['etapes_ids'])) {
+                            $etapes_titles = [];
+
+                            // Parcourir toutes les étapes et récupérer celles du voyage en cours
+                            foreach ($etapes as $etape) {
+                                if (in_array($etape['etape_id'], $voyage['etapes_ids'])) {
+                                    $etapes_titles[] = htmlspecialchars($etape['titre']);
+                                }
+                            }
+
+                            // Afficher les titres des étapes séparés par une virgule
+                            echo implode(', ', $etapes_titles);
+                        } else {
+                            echo "Aucune étape associée";
+                        }
+                        ?>
+                        </td>
+                        <td><a href="voyages.php#v<?= htmlspecialchars($voyage['voyage_id']) ?>" >Voir les détails</a></td>
+                        <td>
+                            <form method="POST" action="favoris.php" class="suppr">
+                                <input type="hidden" name="voyage_nom" value="<?= htmlspecialchars($voyage['titre']) ?>">
+                                <button type="submit" name="supprimer_favori" >❌ </button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+        </center>
+
+        
     </body>
     
     <div class="paysage"></div>
+
+    <!-- Pied de page -->
+    <footer class="foooot">
+            <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
+        </footer>
+    </body>
 </html>

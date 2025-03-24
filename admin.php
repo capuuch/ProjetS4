@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promote'])) {
                     <td><a href="admin.php" class="navi">Admin</a></td>
                 <?php endif; ?>
             </tr>
-        </table></center></br></br></br>
+        </table></center>
 
             <p class="gestion">Gestion des utilisateurs</p>
             <center><table class="tabadmin">
