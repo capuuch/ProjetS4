@@ -1,2 +1,3 @@
 # ProjetS4
-voici notre projet
+
+Bienvenue sur notre site Green Odyssey. La page d'accueil est index.php.
