@@ -122,18 +122,6 @@ function getAPIKey($vendeur)
         ?>
 
 
-        <form action='https://www.plateforme-smc.fr/cybank/index.php' method='POST'>
-        <input type='hidden' name='transaction' value='154632ABCD'>
-        <input type='hidden' name='montant' value='18000.99'> 
-        <input type='hidden' name='vendeur' value='MI-4_F'>
-        <input type='hidden' name='retour' value='http://localhost/php/profil.php?session=s'>
-        <input type='hidden' name='control' value='<?php echo $control;?>'>
-                <input type='submit' value="Valider et payer">
-        </form>
-
-
-
-
         <!-- Pied de page -->
         <footer class="foooot">
             <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
