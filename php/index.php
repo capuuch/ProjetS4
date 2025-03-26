@@ -3,7 +3,7 @@
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
+        <link rel="stylesheet" type="text/css" href="../css/projetS4.css">
 
         <title>Green Odyssey</title>
 
@@ -29,6 +29,7 @@
                 
                 <?php else: ?>
                     <td><a href="favoris.php"   class="navi">Favoris</a></td>
+                    <td><a href="panier.php" class="navi">Panier</td>
                     <td><a href="profil.php"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
                 <?php endif; ?>
 

@@ -2,7 +2,7 @@
     session_start(); 
     $isConnected = isset($_SESSION['user_id']);
 
-    $voyages_file = 'voyages.json';
+    $voyages_file = '../json/voyages.json';
 
     if (file_exists($voyages_file)) {
         $json_content = file_get_contents($voyages_file);
@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
+        <link rel="stylesheet" type="text/css" href="../css/projetS4.css">
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
         <title>Green Odyssey Voyages</title>
@@ -52,6 +52,7 @@
                 
                 <?php else: ?>
                     <td><a href="favoris.php"   class="navi">Favoris</a></td>
+                    <td><a href="panier.php" class="navi">Panier</td>
                     <td><a href="profil.php"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
                 <?php endif; ?>
 
@@ -98,7 +99,11 @@
                 <div class = choiceContainer>
                     
                     <?php if ($isConnected): ?>
-                        <a href="etapes.php" class="choixClient">ETAPES</a>
+                        <form method="POST" action="etapes.php">
+                            <input type="hidden" name="voyage_nom" value="<?= htmlspecialchars($voyage['titre']); ?>">
+                            <button type="submit" name="envoi_voyage" class="choixClient">Etapes</button>
+                        </form>
+                        
                         <form method="POST" action="favoris.php">
                             <input type="hidden" name="voyage_nom" value="<?= htmlspecialchars($voyage['titre']); ?>">
                             <button type="submit" name="ajouter_favori" class="choixClient btn-favoris">💖</button>

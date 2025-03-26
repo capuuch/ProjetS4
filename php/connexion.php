@@ -6,7 +6,7 @@
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
+        <link rel="stylesheet" type="text/css" href="../css/projetS4.css">
 
         <title>Green Odyssey Connexion</title>
 
@@ -34,6 +34,7 @@
                 
                 <?php else: ?>
                     <td><a href="favoris.php"   class="navi">Favoris</a></td>
+                    <td><a href="panier.php" class="navi">Panier</td>
                     <td><a href="profil.php"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
                 <?php endif; ?>
             </tr>
@@ -66,7 +67,7 @@
                     
 
                     // Vérification des identifiants
-                    $file = 'data1.json';
+                    $file = '../json/data1.json';
                     if (file_exists($file)) {
                         $users = json_decode(file_get_contents($file), true);
 

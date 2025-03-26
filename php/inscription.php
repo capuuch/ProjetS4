@@ -1,13 +1,12 @@
 <?php session_start();
     date_default_timezone_set("Europe/Paris");
     if (isset($_POST['nom'])){
-        $file_content= file_get_contents("data1.json");
+        $file_content= file_get_contents("../json/data1.json");
         $users=json_decode($file_content, true);
 
 
         foreach ($users as $user) {
             if (strtolower($user["email"]) == strtolower($_POST["email"])) {
-                echo "Cet email est déjà utilisé.";
                 exit;
                 header("Location: inscription.php"); // Arrêter l'exécution si un utilisateur avec ce mail existe déjà
             }
@@ -19,7 +18,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
+        <link rel="stylesheet" type="text/css" href="../css/projetS4.css">
 
         <title>Green Odyssey Inscription</title>
 
@@ -44,6 +43,7 @@
                 
                 <?php else: ?>
                     <td><a href="favoris.php"   class="navi">Favoris</a></td>
+                    <td><a href="panier.php" class="navi">Panier</td>
                     <td><a href="profil.php"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
                 <?php endif; ?>
             </tr>
@@ -131,7 +131,7 @@
         ];
 
         // Lecture des données existantes du fichier JSON
-        $file = 'data1.json';
+        $file = '../json/data1.json';
         $dataArray = [];
 
         if (file_exists($file)) {

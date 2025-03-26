@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-/*if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== "admin") {
+/*if (empty($_SESSION['user_id']) || $_SESSION['role'] !== "admin") {
     header("Location: connexion.php");
     exit;
-} */ //cette partie est TRES importante, le site n'est pas censé fonctionner sans pourtant ça fonctionne UNIQUEMENT sans yfgvuyegzur
+} */
 
 // Charger les données du fichier JSON
-$file = 'data1.json';
+$file = '../json/data1.json';
 $users = json_decode(file_get_contents($file), true);
 
 // Traitement de la promotion en administrateur 
@@ -25,8 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promote'])) {
 
     // Mettre à jour les données en mémoire
     $users = json_decode(file_get_contents($file), true);
-
-    echo "<p>L'utilisateur $emailToPromote est maintenant administrateur.</p>";
 }
 
     $usersPerPage = 10; // Nombre d’utilisateurs par page
@@ -41,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promote'])) {
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
+        <link rel="stylesheet" type="text/css" href="../css/projetS4.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">    <!-- pour afficher l'icone du crayon pour modifier-->
 
 
@@ -70,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promote'])) {
                 
                 <?php else: ?>
                     <td><a href="favoris.php"   class="navi">Favoris</a></td>
+                    <td><a href="panier.php" class="navi">Panier</td>
                     <td><a href="profil.php"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
                 <?php endif; ?>
                 

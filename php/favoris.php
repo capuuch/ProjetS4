@@ -1,59 +1,59 @@
 <?php
-session_start();
+    session_start();
 
-$user_id = $_SESSION['user_id'];
-$users_file = 'data1.json';
-$etapes_file = 'etapes.json';
+    $user_id = $_SESSION['user_id'];
+    $users_file = '../json/data1.json';
+    $etapes_file = '../json/etapes.json';
 
-$voyages = json_decode(file_get_contents('voyages.json'), true);
+    $voyages = json_decode(file_get_contents('../json/voyages.json'), true);
 
-if (file_exists($etapes_file)) {
-    $json_content = file_get_contents($etapes_file);
-    $etapes = json_decode($json_content, true);
-    
-    if (!is_array($etapes)) {
-        $etapes = []; 
-    }
-} else {
-    $etapes = [];
-}
-
-// Charger les users depuis data1.json
-$users = file_exists($users_file) ? json_decode(file_get_contents($users_file), true) : [];
-
-
-if ($users === null) {
-    die("Erreur : Impossible de lire le fichier JSON. Vérifiez sa syntaxe.");
-}
-
-foreach ($users as &$user) { //parcours des users du data.json
-    if ($user['email'] === $user_id) {
-        if (!isset($user['favoris'])) {
-            $user['favoris'] = []; //création du tableau favori pour l'user qui sera dans le data1.json
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_favori'])) {    //foncion d'ajout d'un favori
-            $voyage_nom = trim($_POST['voyage_nom']);
-            if (!empty($voyage_nom) && !in_array($voyage_nom, $user['favoris'])) {
-                $user['favoris'][] = $voyage_nom;
-            }
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimer_favori'])) {    //fonction de suppression d'un favori
-            $voyage_nom = trim($_POST['voyage_nom']);
-            $user['favoris'] = array_values(array_diff($user['favoris'], [$voyage_nom]));
-        }
-        break;
-
+    if (file_exists($etapes_file)) {
+        $json_content = file_get_contents($etapes_file);
+        $etapes = json_decode($json_content, true);
         
+        if (!is_array($etapes)) {
+            $etapes = []; 
+        }
+    } else {
+        $etapes = [];
     }
-}
+
+    // Charger les users depuis data1.json
+    $users = file_exists($users_file) ? json_decode(file_get_contents($users_file), true) : [];
+
+
+    if ($users === null) {
+        die("Erreur : Impossible de lire le fichier JSON. Vérifiez sa syntaxe.");
+    }
+
+    foreach ($users as &$user) { //parcours des users du data.json
+        if ($user['email'] === $user_id) {
+            if (!isset($user['favoris'])) {
+                $user['favoris'] = []; //création du tableau favori pour l'user qui sera dans le data1.json
+            }
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_favori'])) {    //foncion d'ajout d'un favori
+                $voyage_nom = trim($_POST['voyage_nom']);
+                if (!empty($voyage_nom) && !in_array($voyage_nom, $user['favoris'])) {
+                    $user['favoris'][] = $voyage_nom;
+                }
+            }
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimer_favori'])) {    //fonction de suppression d'un favori
+                $voyage_nom = trim($_POST['voyage_nom']);
+                $user['favoris'] = array_values(array_diff($user['favoris'], [$voyage_nom]));
+            }
+            break;
+
+            
+        }
+    }
 
 
 
-// Sauvegarde des modifications
-file_put_contents($users_file, json_encode($users, JSON_PRETTY_PRINT));
-$_SESSION['user'] = $user;
+    // Sauvegarde des modifications
+    file_put_contents($users_file, json_encode($users, JSON_PRETTY_PRINT));
+    $_SESSION['user'] = $user;
 
 ?>
 
@@ -62,7 +62,7 @@ $_SESSION['user'] = $user;
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
+        <link rel="stylesheet" type="text/css" href="../css/projetS4.css">
 
         <title>Green Odyssey Connexion</title>
 
@@ -87,6 +87,7 @@ $_SESSION['user'] = $user;
                 
                 <?php else: ?>
                     <td><a href="favoris.php"   class="navi">Favoris</a></td>
+                    <td><a href="panier.php" class="navi">Panier</td>
                     <td><a href="profil.php"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
                 <?php endif; ?>
 

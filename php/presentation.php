@@ -1,8 +1,8 @@
 <?php 
     session_start(); 
-    $etapes_file='etapes.json';
-    $voyages = json_decode(file_get_contents('voyages.json'), true);
-    $etapes = json_decode(file_get_contents('etapes.json'), true);
+    $etapes_file='../json/etapes.json';
+    $voyages = json_decode(file_get_contents('../json/voyages.json'), true);
+    $etapes = json_decode(file_get_contents('../json/etapes.json'), true);
     
 
     // Recuperer le mot-cle
@@ -83,7 +83,7 @@
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
+        <link rel="stylesheet" type="text/css" href="../css/projetS4.css">
 
         <title>Green Odyssey Présentation</title>
 
@@ -108,6 +108,7 @@
                 
                 <?php else: ?>
                     <td><a href="favoris.php"   class="navi">Favoris</a></td>
+                    <td><a href="panier.php" class="navi">Panier</td>
                     <td><a href="profil.php"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
                 <?php endif; ?>
 
