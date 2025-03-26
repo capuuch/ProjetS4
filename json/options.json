@@ -1,0 +1,238 @@
+{
+    "z": {
+        "1": {
+            "11": {
+                "activit\u00e9": "Visite d'un parc",
+                "hebergement": "Auberge",
+                "transport": "Voiture"
+            },
+            "12": {
+                "activit\u00e9": "Ski ou Snowboard",
+                "hebergement": "Chalet",
+                "transport": "Navette"
+            },
+            "13": {
+                "activit\u00e9": "Randonn\u00e9e hivernale",
+                "hebergement": "Auberge",
+                "transport": "Voiture"
+            },
+            "user_info": {
+                "nom": "z",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Vancouver",
+            "etapes": {
+                "11": {
+                    "activit\u00e9": "Visite d'un parc",
+                    "hebergement": "Auberge",
+                    "transport": "Train"
+                },
+                "12": {
+                    "activit\u00e9": "Ski ou Snowboard",
+                    "hebergement": "Auberge",
+                    "transport": "Voiture"
+                },
+                "13": {
+                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Voiture"
+                }
+            }
+        }
+    },
+    "q": {
+        "1": {
+            "user_info": {
+                "nom": "q",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Vancouver",
+            "etapes": {
+                "11": {
+                    "activit\u00e9": "Visite d'un parc",
+                    "hebergement": "Auberge",
+                    "transport": "Voiture"
+                },
+                "12": {
+                    "activit\u00e9": "Ski ou Snowboard",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Voiture"
+                },
+                "13": {
+                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Voiture"
+                }
+            }
+        },
+        "2": {
+            "user_info": {
+                "nom": "q",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Qu\u00e9bec",
+            "etapes": {
+                "21": {
+                    "activit\u00e9": "Visite guid\u00e9e de la vieille ville",
+                    "hebergement": "Auberge",
+                    "transport": "Train"
+                },
+                "22": {
+                    "activit\u00e9": "Visite du quartier historique",
+                    "hebergement": "Chalet",
+                    "transport": "Train"
+                },
+                "23": {
+                    "activit\u00e9": "Visite guid\u00e9e encore",
+                    "hebergement": "Chalet",
+                    "transport": "Voiture"
+                }
+            }
+        },
+        "3": {
+            "user_info": {
+                "nom": "q",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Toronto",
+            "etapes": {
+                "31": {
+                    "activit\u00e9": null,
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Voiture"
+                },
+                "32": {
+                    "activit\u00e9": "Visite des galeries d'art",
+                    "hebergement": "Chalet",
+                    "transport": "Navette"
+                },
+                "33": {
+                    "activit\u00e9": "D\u00e9couverte de la faune",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Train"
+                }
+            }
+        },
+        "6": {
+            "user_info": {
+                "nom": "q",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Rocky Mountains",
+            "etapes": {
+                "61": {
+                    "activit\u00e9": "Randonn\u00e9e dans le parc national",
+                    "hebergement": "",
+                    "transport": "Train"
+                },
+                "62": {
+                    "activit\u00e9": "Kayak dans le lac",
+                    "hebergement": "",
+                    "transport": "Voiture"
+                },
+                "63": {
+                    "activit\u00e9": null,
+                    "hebergement": "Hotel Luxe",
+                    "transport": ""
+                }
+            }
+        }
+    },
+    "w": {
+        "1": {
+            "user_info": {
+                "nom": "w",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Vancouver",
+            "etapes": {
+                "11": {
+                    "activit\u00e9": "Visite d'un parc",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Navette"
+                },
+                "12": {
+                    "activit\u00e9": "Ski ou Snowboard",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Voiture"
+                },
+                "13": {
+                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "hebergement": "Chalet",
+                    "transport": "Voiture"
+                }
+            }
+        }
+    },
+    "d": [],
+    "t": {
+        "1": {
+            "user_info": {
+                "nom": "t",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Vancouver",
+            "etapes": {
+                "11": {
+                    "activit\u00e9": "Visite d'un parc",
+                    "hebergement": "Chalet",
+                    "transport": "Train"
+                },
+                "12": {
+                    "activit\u00e9": "Ski ou Snowboard",
+                    "hebergement": "Chalet",
+                    "transport": "Navette"
+                },
+                "13": {
+                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Train"
+                }
+            },
+            "options_generales": {
+                "nb_pers": 1,
+                "date_depart": "1111-11-11",
+                "restauration": "Pension compl\u00e8te",
+                "assurance": true
+            }
+        },
+        "3": {
+            "user_info": {
+                "nom": "t",
+                "prenom": "",
+                "email": ""
+            },
+            "voyage_titre": "Toronto",
+            "etapes": {
+                "31": {
+                    "activit\u00e9": "Balade dans le parc",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Navette"
+                },
+                "32": {
+                    "activit\u00e9": "Visite des galeries d'art",
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Navette"
+                },
+                "33": {
+                    "activit\u00e9": null,
+                    "hebergement": "Hotel Luxe",
+                    "transport": "Navette"
+                }
+            },
+            "options_generales": {
+                "nb_pers": 1,
+                "date_depart": "1111-11-11",
+                "restauration": "Demi-pension",
+                "assurance": true
+            }
+        }
+    }
+}

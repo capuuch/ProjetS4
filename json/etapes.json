@@ -229,7 +229,7 @@
     },
     
     {
-        "etape_id": "71",
+        "etape_id": 71,
         "titre": "Observation des balaines",
         "prix": 30,
         "nb_personnes": 6,
@@ -242,7 +242,7 @@
     }
     ,
     {
-        "etape_id": "72",
+        "etape_id": 72,
         "titre": "Parc national de Gros Morne",
         "prix": 100,
         "nb_personnes": 6,
@@ -254,7 +254,7 @@
         }
     },
     {
-        "etape_id": "73",
+        "etape_id": 73,
         "titre": "Parc nationnal de Gros Morne - Fjords de l'Est",
         "prix": 0,
         "nb_personnes": 6,
@@ -267,7 +267,7 @@
     },
     
     {
-        "etape_id": "81",
+        "etape_id": 81,
         "titre": "cap breton highlands national park",
         "prix": 80,
         "nb_personnes": 6,
@@ -279,7 +279,7 @@
         }
     },
     {
-        "etape_id": "82",
+        "etape_id": 82,
         "titre": "cap breton highlands national park",
         "prix": 250,
         "nb_personnes": 6,
@@ -291,7 +291,7 @@
         }
     },
     {
-        "etape_id": "83",
+        "etape_id": 83,
         "titre": "cap breton highlands national park",
         "prix": 60,
         "nb_personnes": 6,

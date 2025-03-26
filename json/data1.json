@@ -7,33 +7,12 @@
         "email": "non",
         "mdp": "$2y$10$Cebb209Yw60mDTvif83dA.1git2abumYB7lnaefgz21R2XZmRBIDq",
         "role": "admin",
-        "derniere_connexion": "2025-03-24 17:23:19",
+        "derniere_connexion": "2025-03-26 12:59:48",
         "favoris": [
-            "Qu\u00e9bec",
-            "Toronto"
+            "Toronto",
+            "Vancouver",
+            "Qu\u00e9bec"
         ]
-    },
-    {
-        "genre": "homme",
-        "nom": "big",
-        "prenom": "phi",
-        "num": "0",
-        "email": "uy",
-        "mdp": "$2y$10$92Pkwv.vaOdNONeA6dgwp.H79giUcLAjcUepPtC7L2OrAAM63Q3Zq",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 10:00:14"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$57eZcLRiwPA8F6NyCF0NcuJkWPOGuDxi3Cx446QNpVMzfQSo2OWoG",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 10:01:22"
     },
     {
         "genre": "homme",
@@ -42,196 +21,9 @@
         "num": "0",
         "email": "b",
         "mdp": "$2y$10$RYgRoGs7UifC.ZVh0kxECuvBT4Kteb.bw2g46MfyOG2P0fJ6NiNx2",
-        "role": "normal",
+        "role": "admin",
         "date_inscription": "2025-03-19",
         "derniere_connexion": "2025-03-19 11:17:39"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$PikikAWy1lktGpsbleJV8uIiWtYKbe9GD8VQko6Mj7.IMna3rF\/HO",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 11:22:43"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$0wNtOOU7ScQOgpW5NTPpX.iW6BF8LkGeb74pu5p\/cK3sLHbjFX9xq",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 11:23:28"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$h4hwfJNWfz9WhVNakV6L7OyXzSvbQPK07380rf1MlkqUo1Mg49Y52",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 11:34:01"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$1l5nHKJjPp5MuSGjT\/v5x.zvGeLkTi1mRYqoLs7g5wM\/VF1F3oiEC",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 11:34:51"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$g1skmcXdciSECrpuEmmuc.n7IeyyuRWbUlJHXnoqbyVQGBNx4LHYm",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 11:37:49"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$SRzG2MKLuT7kB8pfPRiQ1OBhXvlP6ESP8EUtrYZ\/G1ErZ5GhnIW3q",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 11:43:11"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$QAWez0UjYep6.7sr55qr3uuwIvj9k4dtPMiy0sgjFZmqJRoj5YYuG",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 11:57:52"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$hYIkLBF6cpZyA8HnSEo\/8OAgWThWINyurWVsryEWgE2TouTmlUqm6",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:10:38"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$ikiLuitiP5WEIwAg5Ub9cuLMZf8CI5juJVOX7moInMhH8tsEigUCO",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:11:41"
-    },
-    {
-        "genre": "homme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$G1R\/Y4.8HECG0ejTzhgRy.6Ls8GMaVLUy1FqKI7RsokNhB\/FtQOB6",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:15:49"
-    },
-    {
-        "genre": "femme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "a",
-        "mdp": "$2y$10$up\/WZm3OAYmV1U.CFf776.04gGeGH6wPPDT.QO63bw02wwWdhSN4W",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:16:06"
-    },
-    {
-        "genre": "femme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "aaaaa\u00e4",
-        "mdp": "$2y$10$krguPChjHfjfKgEkwSfdGuL.cp9OhQTeOSVCrLC471ZyFeUSF2a2.",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:17:54"
-    },
-    {
-        "genre": "femme",
-        "nom": "a",
-        "prenom": "a",
-        "num": "0",
-        "email": "aaaaa\u00e4",
-        "mdp": "$2y$10$2NU90YwquWQ10vD06gqR0OQ.A3RTEdOCyKc5dqj30.hWrCdAHQjKG",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:18:11"
-    },
-    {
-        "genre": "femme",
-        "nom": "h",
-        "prenom": "f",
-        "num": "1",
-        "email": "fff",
-        "mdp": "$2y$10$FvkWmWlzjiXZ3MaI19LgPOkJfitbmpaC\/5x8KJq3\/R8yvaz4P4UVy",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:18:56"
-    },
-    {
-        "genre": "femme",
-        "nom": "h",
-        "prenom": "f",
-        "num": "1",
-        "email": "fff",
-        "mdp": "$2y$10$TRvcHSrQGVqi\/3kqvse5keLMlMcyDRaWD7BdJUgiD2m.QxwNtgw7S",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:20:12"
-    },
-    {
-        "genre": "homme",
-        "nom": "s",
-        "prenom": "s",
-        "num": "7",
-        "email": "fff",
-        "mdp": "$2y$10$EXvEFri15LATwQqILYKDr.DEIfMYRoao1QcJu6u.GHND\/qShOrizW",
-        "role": "normal",
-        "date_inscription": "2025-03-19",
-        "derniere_connexion": "2025-03-19 12:22:37"
-    },
-    {
-        "genre": "homme",
-        "nom": "ih",
-        "prenom": "ij",
-        "num": "0",
-        "email": "\u00e7u",
-        "mdp": "$2y$10$O08n4eZsiMmwKCqixwaCvuvFpj9yEkADB6TtyiztY5Dko4YPPy6cq",
-        "role": "admin",
-        "date_inscription": "2025-03-20",
-        "derniere_connexion": "2025-03-20 14:51:20"
     },
     {
         "genre": "homme",
@@ -242,10 +34,153 @@
         "mdp": "$2y$10$JaVYkxRFhwU3eQdILiHZi.4LWAQ6H.KRTEck4VWlO0x53MSel6WCe",
         "role": "admin",
         "date_inscription": "2025-03-23",
-        "derniere_connexion": "2025-03-24 16:33:00",
+        "derniere_connexion": "2025-03-25 11:23:46",
         "favoris": [
             "Vancouver",
             "Cap Breton Highlands National Park"
         ]
+    },
+    {
+        "genre": "homme",
+        "nom": "a",
+        "prenom": "a",
+        "num": "0",
+        "email": "a",
+        "mdp": "$2y$10$OTtSrD7mzGu8Ll26aq35jOUKB0PmIMdpimRYonbplsejPZ9gJlnlm",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-26 21:04:17",
+        "favoris": []
+    },
+    {
+        "genre": "femme",
+        "nom": "c",
+        "prenom": "c",
+        "num": "0",
+        "email": "c",
+        "mdp": "$2y$10$794CX2m4JXyIx4wp0XhPYuhiqJrzCXehGxz6X3rxdSTRjgft34y7O",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-25 12:07:59",
+        "favoris": []
+    },
+    {
+        "genre": "homme",
+        "nom": "d",
+        "prenom": "d",
+        "num": "0",
+        "email": "d",
+        "mdp": "$2y$10$K6eWzhA5RpbkCJxT.Xy\/Bey8YgZyQWq6le3Vp.x0Gyvs5feAiEHzO",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-26 23:02:15"
+    },
+    {
+        "genre": "homme",
+        "nom": "e",
+        "prenom": "e",
+        "num": "0",
+        "email": "e",
+        "mdp": "$2y$10$yL5OgIb.\/Un9XO0CrZb1FuynidhBlHa0mDJsA2XSSmVWu72Q0CEJK",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-25 11:28:40"
+    },
+    {
+        "genre": "femme",
+        "nom": "f",
+        "prenom": "f",
+        "num": "0",
+        "email": "f",
+        "mdp": "$2y$10$50Tw1XRqZ23XyTs7aZlz0.zqR4NrhD78RTCx.bud26V06Y3Jr4dAG",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-25 11:28:52"
+    },
+    {
+        "genre": "femme",
+        "nom": "g",
+        "prenom": "g",
+        "num": "0",
+        "email": "g",
+        "mdp": "$2y$10$.Mq.iW8YDOekYb1ebbfw3.9O1Ln38ezJGm4F2R8tUIWsuwVkXjcCi",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-25 11:29:04"
+    },
+    {
+        "genre": "homme",
+        "nom": "h",
+        "prenom": "h",
+        "num": "0",
+        "email": "h",
+        "mdp": "$2y$10$8jgblCsnyKmlPgmzYgH1eOvhx3pBv\/x5YN186.VVnIrNWDoxVtiqK",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-25 12:24:03",
+        "favoris": [
+            "Qu\u00e9bec",
+            "Alberta"
+        ]
+    },
+    {
+        "genre": "homme",
+        "nom": "i",
+        "prenom": "i",
+        "num": "0",
+        "email": "i",
+        "mdp": "$2y$10$ISfRTs6ghur7UieZ29YTbOltTLUZoZVmEMPdtfH4mRzJQev2iSiKm",
+        "role": "normal",
+        "date_inscription": "2025-03-25",
+        "derniere_connexion": "2025-03-25 11:29:55"
+    },
+    {
+        "genre": "homme",
+        "nom": "z",
+        "prenom": "z",
+        "num": "0",
+        "email": "z",
+        "mdp": "$2y$10$br2u6u1ZXQvAHmAm0WdieebfTyb2eaxNbIFbnzE\/jyvL.Y9gaxaEW",
+        "role": "normal",
+        "date_inscription": "2025-03-26",
+        "derniere_connexion": "2025-03-26 22:00:20",
+        "favoris": [
+            "Vancouver"
+        ]
+    },
+    {
+        "genre": "homme",
+        "nom": "q",
+        "prenom": "q",
+        "num": "0",
+        "email": "q",
+        "mdp": "$2y$10$7w19.AHldxL29NhfEJ1uD.\/4sSTgO4ePozucP9lXRrSslX7nAmziS",
+        "role": "normal",
+        "date_inscription": "2025-03-26",
+        "derniere_connexion": "2025-03-26 22:06:16",
+        "favoris": []
+    },
+    {
+        "genre": "homme",
+        "nom": "w",
+        "prenom": "w",
+        "num": "0",
+        "email": "w",
+        "mdp": "$2y$10$MhBBiMxlH8jXbFzNSn9Iie0mGp\/\/Uz.DhzmsWfYAiznIijYlbhvT2",
+        "role": "normal",
+        "date_inscription": "2025-03-26",
+        "derniere_connexion": "2025-03-26 22:14:20"
+    },
+    {
+        "genre": "paspr\u00e9cis\u00e9",
+        "nom": "t",
+        "prenom": "t",
+        "num": "0",
+        "email": "t",
+        "mdp": "$2y$10$MUzZde2TyfZtWK1y7FItqu.hqYMdUW0Jq2OyCRL771eklmEKkMx7G",
+        "role": "normal",
+        "date_inscription": "2025-03-26",
+        "derniere_connexion": "2025-03-26 23:36:47",
+        "favoris": []
     }
 ]
