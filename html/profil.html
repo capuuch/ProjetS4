@@ -1,81 +1,190 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">    <!-- pour afficher l'icone du crayon pour modifier-->
+<head>
+    <link rel="stylesheet" type="text/css" href="projetS4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css ">
+    <title>Green Odyssey Profil</title>
 
-        <title>Green Odyssey Profil</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Anas_Capucine_Hadil" />
 
-        <meta charset="UTF-8">
-        <meta name=”author” content=”Anas_Capucine_Hadil”/>
+    <link rel="preconnect" href="https://fonts.googleapis.com ">
+    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat :ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <center><h1>Green Odyssey</h1></center>
-        <center><table class="nav">
+    <style>
+        .profil-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #A1B5D8;
+        }
+
+        .profil-info input {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 4px;
+            border: 1px solid #555;
+            background-color: #2c2c2c;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .btn-modif {
+            align-self: flex-start;
+            background: none;
+            border: none;
+            color: #00c896;
+            cursor: pointer;
+        }
+
+        .btn-modif:hover {
+            color: #00ffcc;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .seconnecter {
+            text-align: center;
+            font-family: quicksand, sans-serif;
+            padding: 5px;
+            font-size: 15px;
+            border-radius: 2cap;
+            width: 120px;
+            background-color: rgba(94, 86, 113, 0.8);
+            color: #e0e0e0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .seconnecter:hover {
+            color: #ffffff;
+            transform: scale(1.05);
+            background-color: rgba(94, 86, 113, 1);
+        }
+    </style>
+
+    <script>
+        function enableEdit(fieldId) {
+            const input = document.getElementById(fieldId);
+            input.disabled = false;
+            input.focus();
+
+            if (fieldId === 'password-input') {
+                input.value = '';
+                input.placeholder = 'Entrez le nouveau mot de passe';
+            }
+        }
+
+        function resetFields() {
+            const inputs = document.querySelectorAll('#profile-form input');
+            inputs.forEach(input => {
+                if (input.type !== 'password') {
+                    input.value = input.dataset.originalValue;
+                } else {
+                    input.value = '';
+                    input.placeholder = '********';
+                }
+                input.disabled = true;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <center><h1>Green Odyssey</h1></center>
+    <center>
+        <table class="nav">
             <tr>
-                <td><a href="index.html" class="navi">Accueil</a></td>  
-                    <td><a href="presentation.html"   class="navi">Présentation</a></td>
-                    <td><a href="voyages.html"  class="navi">Voyages</a></td>
-                    <td><a href="inscription.html"   class="navi">S'inscrire</a></td>
-                    <td><a href="favoris.html"   class="navi">Favoris</a></td>
-                    <td><a href="connexion.html"   class="navi">Se Connecter</a></td>
-                    <td><a href="profil.html"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
-                </tr>
-        </table></center></br></br></br>
-        
-        <center><div class="profil">
+                <td><a href="index.html" class="navi">Accueil</a></td>
+                <td><a href="presentation.html" class="navi">Présentation</a></td>
+                <td><a href="voyages.html" class="navi">Voyages</a></td>
+                <td><a href="inscription.html" class="navi">S'inscrire</a></td>
+                <td><a href="favoris.html" class="navi">Favoris</a></td>
+                <td><a href="connexion.html" class="navi">Se Connecter</a></td>
+                <td><a href="profil.html" class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
+            </tr>
+        </table>
+    </center>
+    </br></br></br>
+
+    <center>
+        <div class="profil">
             <img src="vavatar.jpeg" alt="Photo de profil" class="avaaatar" height="70" width="70">
             <h2>Profil Utilisateur</h2>
-        
-            <div class="profil-info">
-                Nom : Roh
-                <button class="btn-modif">
-                    <i class="fa fa-pencil-alt"></i>
-                </button>
-            </div><br>
 
-            <div class="profil-info">
-                Prénom : Hehe
-                <button class="btn-modif">
-                    <i class="fa fa-pencil-alt"></i>
-                </button>
-            </div><br>
-        
-            <div class="profil-info">
-                Email : blaaaa@gmail.com
-                <button class="btn-modif">
-                    <i class="fa fa-pencil-alt"></i>
-                </button>
-            </div><br>
-        
-            <div class="profil-info">
-                N° Tel : 06 46 22 41 90
-                <button class="btn-modif">
-                    <i class="fa fa-pencil-alt"></i>
-                </button>
-            </div>
-            <br>
+            <form id="profile-form">
+                <div class="profil-info">
+                    Nom :
+                    <input type="text" id="nom-input" value="Roh" data-original-value="Roh" disabled>
+                    <button type="button" class="btn-modif" onclick="enableEdit('nom-input')">
+                        <i class="fa fa-pencil-alt"></i>
+                    </button>
+                </div>
 
-            <div class="profil-info">
-                Mot de passe : ********
-                <button class="btn-modif">
-                    <i class="fa fa-pencil-alt"></i>
-                </button>
-            </div>
-            <br>
-        
-            <center><button class="seconnecter">Se déconnecter</button></center>
-        </div></center>
+                <div class="profil-info">
+                    Prénom :
+                    <input type="text" id="prenom-input" value="Hehe" data-original-value="Hehe" disabled>
+                    <button type="button" class="btn-modif" onclick="enableEdit('prenom-input')">
+                        <i class="fa fa-pencil-alt"></i>
+                    </button>
+                </div>
 
-        <!-- Pied de page -->
-        <footer>
-            <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
-        </footer>
-    </body>
+                <div class="profil-info">
+                    Email :
+                    <input type="email" id="email-input" value="blaaaa@gmail.com" data-original-value="blaaaa@gmail.com" disabled>
+                    <button type="button" class="btn-modif" onclick="enableEdit('email-input')">
+                        <i class="fa fa-pencil-alt"></i>
+                    </button>
+                </div>
+
+                <div class="profil-info">
+                    N° Tel :
+                    <input type="tel" id="num-input" value="06 46 22 41 90" data-original-value="06 46 22 41 90" disabled>
+                    <button type="button" class="btn-modif" onclick="enableEdit('num-input')">
+                        <i class="fa fa-pencil-alt"></i>
+                    </button>
+                </div>
+
+                <div class="profil-info">
+                    Mot de passe :
+                    <input type="password" id="password-input" placeholder="********" data-original-value="" disabled>
+                    <button type="button" class="btn-modif" onclick="enableEdit('password-input')">
+                        <i class="fa fa-pencil-alt"></i>
+                    </button>
+                    <small style="display: block; font-size: 0.8em; margin-top: 5px;">
+                        Laissez vide si vous ne souhaitez pas changer le mot de passe.
+                    </small>
+                </div>
+
+                <!-- Boutons -->
+                <div class="form-actions">
+                    <button type="submit" class="seconnecter">Valider</button>
+                    <button type="button" class="seconnecter" onclick="resetFields()" style="background-color: #dc3545;">Annuler</button>
+                </div>
+            </form>
+
+            <form method="post" style="margin-top: 15px;">
+                <button type="submit" name="logout" class="seconnecter">Se déconnecter</button>
+            </form>
+        </div>
+    </center>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
+    </footer>
+
     <div class="paysage"></div>
+</body>
+
 </html>

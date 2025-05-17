@@ -1,383 +1,357 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="projetS4.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Green Odyssey Voyages</title>
+    <link rel="stylesheet" type="text/css" href="../css/projetS4.css" id="theme-style">
 
-        <title>Green Odyssey Voyages</title>
+    <style>
+        /* === Fond animé global (mode clair/sombre) === */
+        .paysage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://i.pinimg.com/originals/29/01/c9/2901c970f65229d483958bdb5b15ee81.gif ");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
 
-        <meta charset="UTF-8">
-        <meta name="author" content="Anas_Capucine_Hadil"/>
+        /* === Style général des voyages === */
+        .rando {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            padding: 40px 0;
+            box-sizing: border-box;
+        }
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- pour la map-->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/> <!-- pour la map-->
-       
-    </head>
+        .interface {
+            display: flex;
+            width: 80%;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            gap: 20px;
+        }
 
-    <body>
-        <div class="paysageV">
-        <center><h1>Green Odyssey</h1></center>
-        <table class="nav">
-            <tr>
-                <td><a href="index.html" class="navi">Accueil</a></td>  
-                    <td><a href="presentation.html"   class="navi">Présentation</a></td>
-                    <td><a href="voyages.html"  class="navi">Voyages</a></td>
-                    <td><a href="inscription.html"   class="navi">S'inscrire</a></td>
-                    <td><a href="favoris.html"   class="navi">Favoris</a></td>
-                    <td><a href="connexion.html"   class="navi">Se Connecter</a></td>
-                    <td><a href="profil.html"   class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
-                </tr>
-        </table>
+        .divText {
+            width: 60%;
+            color: white;
+            font-size: 20px;
+            line-height: 1.6;
+        }
 
-        <form class="center">
-            <div class="c1">
-                <p class="titress">Commencez à naviguer pour trouver votre coup de coeur</p>
-                <p class="parag">Vous pouvez ajouter les lieux qui vous intéressent le plus à vos favoris, ou alors commander dés maintenant si vous êtes sur de vous.</p>
-                <button onclick="location.href='#v1'" class="seconnecter">Naviguer</button>
-            </div>
-            </div>
-        </form>
+        #map1,
+        #map2,
+        #map3,
+        #map4,
+        #map5,
+        #map6,
+        #map7,
+        #map8 {
+            width: 40%;
+            height: 300px;
+            border-radius: 10px;
+        }
 
-        <div class="rando1">
-            <h4 id="v1">Vancouver</h4>
-            <br></br>
-            <br></br>
-            <br></br>
-            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #e0e0e0;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-            <div class="interface">
-                
-                <div class="divText"><u>Juan de Fuca : Marine Trail<br></br></u>
-                    Si vous rêvez de nature brute, d’air marin vivifiant et de sentiers bordés de forêts majestueuses, 
-                    <br></br>
-                    alors le Juan de Fuca Marine Trail est fait pour vous ! Niché sur la côte ouest de l'île de
-                    <br></br>
-                    Vancouver, ce sentier de 47 km vous promet une aventure inoubliable entre plages sauvages, falaises 
-                    <br></br>
-                    escarpées et forêts anciennes.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un randonneur chevronné en quête de défi  
-                        <br></br>ou un amoureux de la nature à la recherche de panoramas <br></br> grandioses, le Juan de Fuca Marine Trail est une immersion 
-                        <br></br>totale dans la beauté sauvage de la Colombie-Britannique. <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map"></div>
-            </div>
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v2'" class="choixClient">Swipe</button>
-                </div>
-        </div>
-        
-        <div class="rando2">
-            <h4 id="v2">Quebec</h4>
-            <br></br>
-            <br></br>
-            <br></br>
+        .choiceContainer {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 40px 0;
+        }
 
-            <div class="interface">
-                
-                <div class="divText"><u>Jacques-Cartier National Park<br></br></u>
-                    Si vous rêvez de nature brute, d’air marin vivifiant et de sentiers bordés de forêts majestueuses, 
-                    <br></br>
-                    alors le Juan de Fuca Marine Trail est fait pour vous ! Niché sur la côte ouest de l'île de
-                    <br></br>
-                    Vancouver, ce sentier de 47 km vous promet une aventure inoubliable entre plages sauvages, falaises 
-                    <br></br>
-                    escarpées et forêts anciennes.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un randonneur chevronné en quête de défi  
-                        <br></br>ou un amoureux de la nature à la recherche de panoramas <br></br> grandioses, le Juan de Fuca Marine Trail est une immersion 
-                        <br></br>totale dans la beauté sauvage de la Colombie-Britannique. <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map2"></div>
-            </div>
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v3'" class="choixClient">Swipe</button>
-                </div>
-        </div>
+        .choixClient {
+            text-align: center;
+            font-family: quicksand, sans-serif;
+            padding: 10px 20px;
+            font-size: 24px;
+            border-radius: 4px;
+            background-color: rgba(94, 86, 113, 0.655);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
 
-        <div class="rando3">
-            <h4 id="v3">Toronto</h4>
-            <br></br>
-            <br></br>
-            <br></br>
+        .choixClient:hover {
+            transform: scale(1.05);
+            background-color: rgba(94, 86, 113, 0.855);
+        }
 
-            <div class="interface">
-                <div class="divText"><u>Îles de Toronto : Évasion Nature<br></br></u>
-                    Si vous cherchez un havre de paix à quelques minutes du tumulte urbain, 
-                    <br></br>
-                    les îles de Toronto sont faites pour vous ! Situé sur le lac Ontario, cet archipel offre 
-                    <br></br>
-                    une escapade idyllique entre plages paisibles, sentiers boisés et vues imprenables sur la skyline de la ville.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un amateur de balades à vélo,  
-                        <br></br>un passionné de kayak ou simplement en quête d’un moment de détente en pleine nature,<br></br> es îles de Toronto sont une invitation à la découverte et à la sérénité au cœur de l’Ontario.
-                        <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map3"></div>
-            </div>
+        .btn-favoris {
+            background-color: transparent;
+            color: #A1B5D8;
+            font-size: 30px;
+            cursor: pointer;
+        }
 
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v4'" class="choixClient">Swipe</button>
-                </div>
-        </div>
+        .btn-favoris:hover {
+            color: #e0e0e0;
+        }
 
-        <div class="rando4">
-            <h4 id="v4">Niagara</h4>
-            <br></br>
-            <br></br>
-            <br></br>
+        .nav {
+            table-layout: fixed;
+            border: solid;
+            border-color: #333;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+            border-radius: 4px;
+            width: 90%;
+            font-size: 120%;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-            <div class="interface">
-                <div class="divText"><u>Juan de Fuca : Marine Trail<br></br></u>
-                    Si vous rêvez de nature brute, d’air marin vivifiant et de sentiers bordés de forêts majestueuses, 
-                    <br></br>
-                    alors le Juan de Fuca Marine Trail est fait pour vous ! Niché sur la côte ouest de l'île de
-                    <br></br>
-                    Vancouver, ce sentier de 47 km vous promet une aventure inoubliable entre plages sauvages, falaises 
-                    <br></br>
-                    escarpées et forêts anciennes.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un randonneur chevronné en quête de défi  
-                        <br></br>ou un amoureux de la nature à la recherche de panoramas <br></br> grandioses, le Juan de Fuca Marine Trail est une immersion 
-                        <br></br>totale dans la beauté sauvage de la Colombie-Britannique. <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map4"></div>
-            </div>
+        .navi {
+            text-decoration: none;
+            font-size: 1.5vw;
+            font-family: Montserrat, sans-serif;
+            text-transform: uppercase;
+            color: #A1B5D8;
+            text-shadow: 2px 3px 5px rgb(0, 0, 0);
+        }
 
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v5'" class="choixClient">Swipe</button>
-                </div>
-        </div>
+        .navi:hover {
+            color: #e0e0e0;
+        }
 
-        <div class="rando5">
-            <h4 id="v5">Alberta</h4>
-            <br></br>
-            <br></br>
-            <br></br>
+        h4 {
+            text-align: center;
+            font-size: 325%;
+            text-transform: uppercase;
+            color: #e0e0e0;
+            text-shadow: 0px 4px 10px rgba(94, 86, 113, 0.912);
+        }
 
-            <div class="interface">
-                <div class="divText"><u>Jasper National Park<br></br></u>
-                    Si vous rêvez de nature brute, d’air marin vivifiant et de sentiers bordés de forêts majestueuses, 
-                    <br></br>
-                    alors le Juan de Fuca Marine Trail est fait pour vous ! Niché sur la côte ouest de l'île de
-                    <br></br>
-                    Vancouver, ce sentier de 47 km vous promet une aventure inoubliable entre plages sauvages, falaises 
-                    <br></br>
-                    escarpées et forêts anciennes.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un randonneur chevronné en quête de défi  
-                        <br></br>ou un amoureux de la nature à la recherche de panoramas <br></br> grandioses, le Juan de Fuca Marine Trail est une immersion 
-                        <br></br>totale dans la beauté sauvage de la Colombie-Britannique. <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map5"></div>
-            </div>
+        body {
+            background: url('https://i.pinimg.com/originals/29/01/c9/2901c970f65229d483958bdb5b15ee81.gif ') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+        }
 
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v6'" class="choixClient">Swipe</button>
-                </div>
-        </div>
+        footer {
+            background-color: rgba(94, 86, 113, 0.912);
+            color: aliceblue;
+            text-align: center;
+            padding: 10px 0;
+            font-family: quicksand, sans-serif;
+        }
+    </style>
 
-        <div class="rando6">
-            <h4 id="v6">Rocky Mountains</h4>
-            <br></br>
-            <br></br>
-            <br></br>
+    <!-- Leaflet Maps -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js "></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css "/>
 
-            <div class="interface">
-                <div class="divText"><u>Je sais pas<br></br></u>
-                    Si vous rêvez de nature brute, d’air marin vivifiant et de sentiers bordés de forêts majestueuses, 
-                    <br></br>
-                    alors le Juan de Fuca Marine Trail est fait pour vous ! Niché sur la côte ouest de l'île de
-                    <br></br>
-                    Vancouver, ce sentier de 47 km vous promet une aventure inoubliable entre plages sauvages, falaises 
-                    <br></br>
-                    escarpées et forêts anciennes.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un randonneur chevronné en quête de défi  
-                        <br></br>ou un amoureux de la nature à la recherche de panoramas <br></br> grandioses, le Juan de Fuca Marine Trail est une immersion 
-                        <br></br>totale dans la beauté sauvage de la Colombie-Britannique. <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map6"></div>
-            </div>
+    <!-- Script thème sombre -->
+    <script>
+        function switchTheme() {
+            const themeStyle = document.getElementById('theme-style');
+            const currentTheme = themeStyle.getAttribute('href');
+            const newTheme = currentTheme.includes('-dark') ? '../css/projetS4.css' : '../css/projetS4-dark.css';
+            themeStyle.setAttribute('href', newTheme);
+            localStorage.setItem('theme', newTheme);
+            document.getElementById('theme-button').textContent = newTheme.includes('-dark') ? '☀️ Mode Clair' : '🌙 Mode Sombre';
+        }
 
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v7'" class="choixClient">Swipe</button>
-                </div>
-        </div>
-
-        <div class="rando7">
-            <h4 id="v7">Terre-Neuve-et-Labrador</h4>
-            <br></br>
-            <br></br>
-            <br></br>
-
-            <div class="interface">
-                <div class="divText"><u>Parc national de Gros Morne<br></br></u>
-                    Si vous rêvez de nature brute, d’air marin vivifiant et de sentiers bordés de forêts majestueuses, 
-                    <br></br>
-                    alors le Juan de Fuca Marine Trail est fait pour vous ! Niché sur la côte ouest de l'île de
-                    <br></br>
-                    Vancouver, ce sentier de 47 km vous promet une aventure inoubliable entre plages sauvages, falaises 
-                    <br></br>
-                    escarpées et forêts anciennes.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un randonneur chevronné en quête de défi  
-                        <br></br>ou un amoureux de la nature à la recherche de panoramas <br></br> grandioses, le Juan de Fuca Marine Trail est une immersion 
-                        <br></br>totale dans la beauté sauvage de la Colombie-Britannique. <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map7"></div>
-            </div>
-
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v8'" class="choixClient">Swipe</button>
-                </div>
-        </div>
-
-        <div class="rando8">
-            <h4 id="v8">Cape Breton Highlands National Park</h4>
-            <br></br>
-            <br></br>
-            <br></br>
-
-            <div class="interface">
-                <div class="divText"><u>Parc national de Gros Morne<br></br></u>
-                    Si vous rêvez de nature brute, d’air marin vivifiant et de sentiers bordés de forêts majestueuses, 
-                    <br></br>
-                    alors le Juan de Fuca Marine Trail est fait pour vous ! Niché sur la côte ouest de l'île de
-                    <br></br>
-                    Vancouver, ce sentier de 47 km vous promet une aventure inoubliable entre plages sauvages, falaises 
-                    <br></br>
-                    escarpées et forêts anciennes.
-                    <br></br>
-                    <div class="photoContainer"><div class="divTextLeft">Que vous soyez un randonneur chevronné en quête de défi  
-                        <br></br>ou un amoureux de la nature à la recherche de panoramas <br></br> grandioses, le Juan de Fuca Marine Trail est une immersion 
-                        <br></br>totale dans la beauté sauvage de la Colombie-Britannique. <br></br>Commandez, ajoutez aux favoris ou passez !</div>
-                        <div class="buttonPhotos">
-                            <button onclick="location.href='...'" class="seconnecter"><</button>
-                            <img  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/e8/6e/13/hiking-to-mystic-beach.jpg?w=1200&h=-1&s=1" class="divPhotos">
-                            <button onclick="location.href='...'" class="seconnecter">></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="map8"></div>
-            </div>
-
-            <div class="details">prix : 549$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb de personnes (max) : 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Periode d'activié : toute l'année</div>
-                <div class = choiceContainer>
-                    <a href="options.html" class="choixClient">COMMANDER</a>
-                    <button onclick="location.href='fav'" class="choixClient">💖</button>
-                    <button onclick="location.href='#v1'" class="choixClient">Swipe</button>
-                </div>
-            </div>
-
-        <script>
-            function createMap(mapId, lat, lon, popupText) {
-                var map = L.map(mapId).setView([lat, lon], 5);
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; OpenStreetMap contributors'
-                }).addTo(map);
-                L.marker([lat, lon]).addTo(map).bindPopup(popupText);
+        window.onload = function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.getElementById('theme-style').setAttribute('href', savedTheme);
+                document.getElementById('theme-button').textContent = savedTheme.includes('-dark') ? '☀️ Mode Clair' : '🌙 Mode Sombre';
             }
+        };
+    </script>
+</head>
+<body>
 
-            createMap('map', 48.54, -124.43, 'Juan de Fuca : Marine Trail'); 
-            createMap('map2', 47.08, -71.40, 'Jacques-Cartier National Park'); 
-            createMap('map3', 43.70, -79.42, 'Toronto'); 
-            createMap('map4', 43.08, -79.08, 'Chutes du Niagara'); 
-            createMap('map5', 53.93, -116.58, 'Jasper National Park, Alberta'); 
-            createMap('map6', 51.43, -116.18, 'Rocky Mountains - Banff'); 
-            createMap('map7', 49.58, -57.52, 'Parc national de Gros Morne');
-            createMap('map8', 46.68, -60.84, 'Cape Breton Highlands National Park');
+<!-- === Fond animé === -->
+<div class="paysage"></div>
 
-        </script>
-   
-        <!-- Pied de page -->
-        <footer>
-            <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
-        </footer>
-    </body>
-    
+<!-- === En-tête === -->
+<center><h1>Green Odyssey</h1></center>
+<table class="nav">
+    <tr>
+        <td><a href="index.php" class="navi">Accueil</a></td>
+        <td><a href="presentation.php" class="navi">Présentation</a></td>
+        <td><a href="voyages.php" class="navi">Voyages</a></td>
+        <td><a href="inscription.php" class="navi">S'inscrire</a></td>
+        <td><a href="connexion.php" class="navi">Se Connecter</a></td>
+        <td><a href="profil.php" class="navi"><img src="vavatar.jpeg" alt="Profil" height="30" width="30" class="avaaatar"></a></td>
+        <td><button id="theme-button" onclick="switchTheme()" class="navi-button navi">🌙 Mode Sombre</button></td>
+    </tr>
+</table>
+
+<!-- === Introduction === -->
+<form class="center">
+    <div class="c1">
+        <h4>Commencez à naviguer pour trouver votre coup de cœur</h4>
+        <p>Vous pouvez ajouter les lieux qui vous intéressent à vos Favoris,</p>
+        <p>ou commander directement si vous êtes sûr de vous.</p>
+        <br>
+        <button onclick="location.href='#v1'" class="choixClient">Naviguer</button>
+    </div>
+</form>
+
+<!-- === Voyage : Vancouver === -->
+<div class="rando" id="v1" style="background-image: url('https://www.alltrails.com/_next/image?url=https%3A%2F%2Fimages.alltrails.com%2F... ');">
+    <h4>Vancouver</h4>
+
+    <div class="interface">
+        <div class="divText">
+            <p>Plongez dans la magie de Vancouver en hiver. Découvrez la ville, ses paysages enneigés et ses magnifiques parcs, ainsi que des activités en plein air comme le ski et la randonnée.</p>
+        </div>
+        <div id="map1"></div>
+    </div>
+
+    <div class="details">
+        <span>Prix : 1500 €</span>
+        <span>Période : Hiver</span>
+    </div>
+
+    <!-- === Boutons ajoutés ici pour Vancouver === -->
+    <div class="choiceContainer">
+        <a href="etapes.php?nom=Vancouver" class="choixClient">ETAPES</a>
+        <a href="favoris.php?nom=Vancouver" class="choixClient btn-favoris">💖</a>
+        <button onclick="location.href='#v2'" class="choixClient">Swipe</button>
+    </div>
+</div>
+
+<!-- === Voyage : Québec === -->
+<div class="rando" id="v2" style="background-image: url('https://www.alltrails.com/_next/image?url=https%3A%2F%2Fimages.alltrails.com%2F... ');">
+    <h4>Québec</h4>
+
+    <div class="interface">
+        <div class="divText">
+            <p>Explorez la ville de Québec en hiver, avec ses paysages enneigés et son architecture historique.</p>
+        </div>
+        <div id="map2"></div>
+    </div>
+
+    <div class="details">
+        <span>Prix : 1400 €</span>
+        <span>Période : Hiver</span>
+    </div>
+
+    <div class="choiceContainer">
+        <a href="etapes.php?nom=Quebec" class="choixClient">ETAPES</a>
+        <a href="favoris.php?nom=Quebec" class="choixClient btn-favoris">💖</a>
+        <button onclick="location.href='#v3'" class="choixClient">Swipe</button>
+    </div>
+</div>
+
+<!-- === Voyage : Toronto === -->
+<div class="rando" id="v3" style="background-image: url('https://cdn.juliekinnear.com/imagesall/2017/10/Crothers-Woods-1.jpg ');">
+    <h4>Toronto</h4>
+
+    <div class="interface">
+        <div class="divText">
+            <p>Venez découvrir Toronto en été, entre culture urbaine, paysages naturels et patrimoine historique.</p>
+        </div>
+        <div id="map3"></div>
+    </div>
+
+    <div class="details">
+        <span>Prix : 1500 €</span>
+        <span>Période : Été</span>
+    </div>
+
+    <div class="choiceContainer">
+        <a href="etapes.php?nom=Toronto" class="choixClient">ETAPES</a>
+        <a href="favoris.php?nom=Toronto" class="choixClient btn-favoris">💖</a>
+        <button onclick="location.href='#v4'" class="choixClient">Swipe</button>
+    </div>
+</div>
+
+<!-- === Voyage : Chutes du Niagara === -->
+<div class="rando" id="v4" style="background-image: url('https://www.terra-canada.com/wp-content/uploads/banner-terra-canada-002.jpg ');">
+    <h4>Chutes du Niagara</h4>
+
+    <div class="interface">
+        <div class="divText">
+            <p>Admirez les impressionnantes chutes du Niagara en été et vivez une expérience inoubliable entre nature et sensations fortes.</p>
+        </div>
+        <div id="map4"></div>
+    </div>
+
+    <div class="details">
+        <span>Prix : 1500 €</span>
+        <span>Période : Été</span>
+    </div>
+
+    <div class="choiceContainer">
+        <a href="etapes.php?nom=Niagara" class="choixClient">ETAPES</a>
+        <a href="favoris.php?nom=Niagara" class="choixClient btn-favoris">💖</a>
+        <button onclick="location.href='#v5'" class="choixClient">Swipe</button>
+    </div>
+</div>
+
+<!-- === Voyage : Alberta === -->
+<div class="rando" id="v5" style="background-image: url('https://afar.brightspotcdn.com/dims4/default/aad7744/2147483647/strip/true/crop/2000x1061+0+132/resize/1440x764 !/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F92%2F8c%2Fd4930cc42bfdd35bb4d287cfa2e8%2Foriginal-banff-lake-louise-canada.jpg');">
+    <h4>Alberta</h4>
+
+    <div class="interface">
+        <div class="divText">
+            <p>Découvrez la beauté sauvage de l'Alberta, avec ses montagnes majestueuses, ses lacs turquoise et ses vastes prairies.</p>
+        </div>
+        <div id="map5"></div>
+    </div>
+
+    <div class="details">
+        <span>Prix : 1800 €</span>
+        <span>Période : Été</span>
+    </div>
+
+    <div class="choiceContainer">
+        <a href="etapes.php?nom=Alberta" class="choixClient">ETAPES</a>
+        <a href="favoris.php?nom=Alberta" class="choixClient btn-favoris">💖</a>
+        <button onclick="location.href='#v6'" class="choixClient">Swipe</button>
+    </div>
+</div>
+
+<!-- === Carte Leaflet === -->
+<script>
+    function createMap(mapId, lat, lon, popupText) {
+        var map = L.map(mapId).setView([lat, lon], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([lat, lon]).addTo(map).bindPopup(popupText);
+    }
+
+    createMap('map1', 48.54, -124.43, 'Juan de Fuca Marine Trail');
+    createMap('map2', 47.08, -71.40, 'Jacques-Cartier National Park');
+    createMap('map3', 43.70, -79.42, 'Toronto');
+    createMap('map4', 43.08, -79.08, 'Chutes du Niagara');
+    createMap('map5', 53.93, -116.58, 'Jasper National Park, Alberta');
+    createMap('map6', 51.43, -116.18, 'Rocky Mountains - Banff');
+    createMap('map7', 49.58, -57.52, 'Parc national de Gros Morne');
+    createMap('map8', 46.68, -60.84, 'Cape Breton Highlands National Park');
+</script>
+
+<!-- === Pied de page === -->
+<footer>
+    <p>&copy; 2025 GREEN ODYSSEY Tous droits réservés.</p>
+</footer>
+
+</body>
 </html>
-
-
-
-
-
-
-
-
-

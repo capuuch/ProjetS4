@@ -3,10 +3,11 @@
         "genre": "homme",
         "nom": "non",
         "prenom": "non",
-        "num": "5",
-        "email": "non",
-        "mdp": "$2y$10$Cebb209Yw60mDTvif83dA.1git2abumYB7lnaefgz21R2XZmRBIDq",
+        "num": "555555555",
+        "email": "non@ff.com",
         "role": "admin",
+        "mdp": "$2y$10$Cebb209Yw60mDTvif83dA.1git2abumYB7lnaefgz21R2XZmRBIDq",
+        "date_inscription": "2025-03-19",
         "derniere_connexion": "2025-03-26 12:59:48",
         "favoris": [
             "Toronto",
@@ -47,7 +48,7 @@
         "num": "0",
         "email": "a",
         "mdp": "$2y$10$OTtSrD7mzGu8Ll26aq35jOUKB0PmIMdpimRYonbplsejPZ9gJlnlm",
-        "role": "normal",
+        "role": "admin",
         "date_inscription": "2025-03-25",
         "derniere_connexion": "2025-03-26 21:04:17",
         "favoris": []
@@ -125,17 +126,6 @@
     },
     {
         "genre": "homme",
-        "nom": "i",
-        "prenom": "i",
-        "num": "0",
-        "email": "i",
-        "mdp": "$2y$10$ISfRTs6ghur7UieZ29YTbOltTLUZoZVmEMPdtfH4mRzJQev2iSiKm",
-        "role": "normal",
-        "date_inscription": "2025-03-25",
-        "derniere_connexion": "2025-03-25 11:29:55"
-    },
-    {
-        "genre": "homme",
         "nom": "z",
         "prenom": "z",
         "num": "0",
@@ -182,5 +172,77 @@
         "date_inscription": "2025-03-26",
         "derniere_connexion": "2025-03-26 23:36:47",
         "favoris": []
+    },
+    {
+        "genre": "homme",
+        "nom": "Metal",
+        "prenom": "abdelk",
+        "num": "333344444",
+        "email": "metalesaek@gmail.com",
+        "role": "admin",
+        "mdp": "$2y$10$qtgCYDwfEj4f6Tn4CwrNFekEzbXGWlNc2uMXz18wJETTdUvy3feGW",
+        "date_inscription": "2025-04-28",
+        "derniere_connexion": "2025-05-11 00:42:21",
+        "favoris": []
+    },
+    {
+        "genre": "homme",
+        "nom": "haba",
+        "prenom": "baah",
+        "num": "05242325",
+        "email": "metalesaek@yahoo.fr",
+        "role": "admin",
+        "mdp": "$2y$10$yYWae5bVZJbTC3UFrhmYb.Ux1yqUgT.rVDAd.g9Sk1a9U5Ss6I9D2",
+        "date_inscription": "2025-05-10",
+        "derniere_connexion": "2025-05-10 21:06:20",
+        "favoris": []
+    },
+    {
+        "genre": "homme",
+        "nom": "erwer",
+        "prenom": "rewrq",
+        "num": "03233225",
+        "email": "erwr@dsf.com",
+        "mdp": "$2y$10$6WkRqDWAKIfpC6.riq7lluiwSdlzG5tgg.QsyKHh\/C.XRbm7l12xG",
+        "role": "normal",
+        "date_inscription": "2025-05-11",
+        "derniere_connexion": "2025-05-11 00:38:21"
+    },
+    {
+        "genre": "femme",
+        "nom": "metales",
+        "prenom": "Hadil",
+        "num": "0666007934",
+        "email": "h@m.FR",
+        "mdp": "$2y$10$nmiOp8SfrF9F2u7zTBqjY.zALCdJcXh1AneoqQdJIDPLG7uBEq7Ry",
+        "role": "normal",
+        "date_inscription": "2025-05-12",
+        "derniere_connexion": "2025-05-12 09:54:45"
+    },
+    {
+        "genre": "femme",
+        "nom": "metales",
+        "prenom": "hadil",
+        "num": "0666",
+        "email": "h@m.com",
+        "mdp": "$2y$10$ST7k0WyyvEDpAig1QLaDJOUGaYGv.Jkn5LVwJl7UJEjZzpeZ\/3B5q",
+        "role": "normal",
+        "date_inscription": "2025-05-12",
+        "derniere_connexion": "2025-05-12 10:01:33",
+        "favoris": []
+    },
+    {
+        "genre": "femme",
+        "nom": "metales",
+        "prenom": "hadil",
+        "num": "0666",
+        "email": "h@m.fr",
+        "mdp": "$2y$10$vUOM1vLdiWG0Da.J6Bwjh.LjujnPFXfwNf.aef.KYFiIcyVP7vEeS",
+        "role": "admin",
+        "date_inscription": "2025-05-12",
+        "derniere_connexion": "2025-05-12 15:04:07",
+        "favoris": [
+            "Qu\u00e9bec"
+        ]
     }
 ]
