@@ -72,6 +72,23 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <style type="text/css">
+            .link-button {
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit; /* Inherit font from parent */
+            color: #007bff; /* Or your theme's link color */
+            text-decoration: underline;
+            cursor: pointer;
+            display: inline; /* Behaves like a link in text flow */
+        }
+
+        .link-button:hover {
+            color: #0056b3; /* Darker link color on hover */
+            text-decoration: underline;
+        }
+        </style>
          <script>
             // Function to set a cookie
             function setCookie(name, value, days) {
@@ -182,13 +199,16 @@
             <p class="parag">Aucun favori enregistré.</p>
         <?php else: ?>
             <table class="tabadmin">
-                <tr>
-                    <th>Voyage</th>
-                    <th>Prix</th>
-                    <th>Etapes</th>
-                    <th>Infos en +</th>
-                    <th>Actions</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Voyage</th>
+                        <th>Prix</th>
+                        <th>Étapes</th>
+                        <th>Infos en +</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody> 
                 <?php foreach ($favoris_affiches as $voyage): ?>
                     <tr>
                         <td><?= htmlspecialchars($voyage['titre']) ?></td>
@@ -196,32 +216,44 @@
                         <td> 
                         <?php
                         // Vérifier si le voyage a des étapes associées
-                        if (!empty($voyage['etapes_ids'])) {
+                        if (!empty($voyage['etapes_ids']) && is_array($etapes)) { // Added is_array check for $etapes
                             $etapes_titles = [];
 
                             // Parcourir toutes les étapes et récupérer celles du voyage en cours
-                            foreach ($etapes as $etape) {
-                                if (in_array($etape['etape_id'], $voyage['etapes_ids'])) {
-                                    $etapes_titles[] = htmlspecialchars($etape['titre']);
+                            foreach ($etapes as $etape_item) { // Renamed $etape to $etape_item to avoid conflict if $etapes itself is an etape
+                                if (isset($etape_item['etape_id']) && in_array($etape_item['etape_id'], $voyage['etapes_ids'])) {
+                                    $etapes_titles[] = htmlspecialchars($etape_item['titre']);
                                 }
                             }
 
                             // Afficher les titres des étapes séparés par une virgule
-                            echo implode(', ', $etapes_titles);
+                            if (!empty($etapes_titles)) {
+                                echo implode(', ', $etapes_titles);
+                            } else {
+                                echo "Titres d'étapes non trouvés";
+                            }
                         } else {
                             echo "Aucune étape associée";
                         }
                         ?>
                         </td>
-                        <td><a href="voyages.php#v<?= htmlspecialchars($voyage['voyage_id']) ?>" >Voir les détails</a></td>
                         <td>
-                            <form method="POST" action="favoris.php" class="suppr">
+                            
+                            <form method="POST" action="etapes.php" style="display: inline;">
                                 <input type="hidden" name="voyage_nom" value="<?= htmlspecialchars($voyage['titre']) ?>">
-                                <button type="submit" name="supprimer_favori" >❌ </button>
+                                <button type="submit" class="link-button">Voir les détails</button> 
+                            </form>
+                            
+                        </td>
+                        <td>
+                            <form method="POST" action="favoris.php" class="suppr" style="display: inline;">
+                                <input type="hidden" name="voyage_nom" value="<?= htmlspecialchars($voyage['titre']) ?>">
+                                <button type="submit" name="supprimer_favori" >❌</button>
                             </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
+                </tbody>
             </table>
         <?php endif; ?>
         </center>

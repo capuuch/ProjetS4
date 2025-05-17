@@ -64,58 +64,66 @@ echo $debugInfo;
 
 // Handle form submissions for different actions
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Promote user to admin
-    if (isset($_POST['promote'])) {
-        $emailToPromote = $_POST['email'];
-        foreach ($users as &$user) {
-            if ($user['email'] === $emailToPromote && $user['role'] === "normal") {
-                $user['role'] = "admin";
-            }
-        }
-        saveUsers($file, $users);
-    }
-    
-    // Delete user
-    if (isset($_POST['delete'])) {
-        $emailToDelete = $_POST['email'];
-        foreach ($users as $key => $user) {
-            if ($user['email'] === $emailToDelete) {
-                unset($users[$key]);
-                break;
-            }
-        }
-        // Re-index array after deletion
-        $users = array_values($users);
-        saveUsers($file, $users);
-    }
-    
-    // Update user information
-    if (isset($_POST['update'])) {
-        $emailToUpdate = $_POST['original_email'];
-        $updatedData = [
-            'genre' => $_POST['genre'],
-            'nom' => $_POST['nom'],
-            'prenom' => $_POST['prenom'],
-            'num' => $_POST['num'],
-            'email' => $_POST['email'],
-            'role' => $_POST['role']
-            // Password is not updated via this form
-        ];
+    // Check if it's an AJAX request for user update
+    if (isset($_POST['ajax_update']) && $_POST['ajax_update'] === 'true') {
+        // This will be handled by update_admin_user.php
+        // No action needed here as we're using AJAX
+    } else {
+        // Handle traditional form submissions for other actions
         
-        foreach ($users as &$user) {
-            if ($user['email'] === $emailToUpdate) {
-                // Keep existing password and other fields that should not be modified
-                $updatedData['mdp'] = $user['mdp'];
-                $updatedData['date_inscription'] = $user['date_inscription'];
-                $updatedData['derniere_connexion'] = $user['derniere_connexion'];
-                $updatedData['favoris'] = $user['favoris'] ?? [];
-                
-                // Update user with new data
-                $user = $updatedData;
-                break;
+        // Promote user to admin
+        if (isset($_POST['promote'])) {
+            $emailToPromote = $_POST['email'];
+            foreach ($users as &$user) {
+                if ($user['email'] === $emailToPromote && $user['role'] === "normal") {
+                    $user['role'] = "admin";
+                }
             }
+            saveUsers($file, $users);
         }
-        saveUsers($file, $users);
+        
+        // Delete user
+        if (isset($_POST['delete'])) {
+            $emailToDelete = $_POST['email'];
+            foreach ($users as $key => $user) {
+                if ($user['email'] === $emailToDelete) {
+                    unset($users[$key]);
+                    break;
+                }
+            }
+            // Re-index array after deletion
+            $users = array_values($users);
+            saveUsers($file, $users);
+        }
+        
+        // Update user information (traditional non-AJAX method)
+        if (isset($_POST['update']) && !isset($_POST['ajax_update'])) {
+            $emailToUpdate = $_POST['original_email'];
+            $updatedData = [
+                'genre' => $_POST['genre'],
+                'nom' => $_POST['nom'],
+                'prenom' => $_POST['prenom'],
+                'num' => $_POST['num'],
+                'email' => $_POST['email'],
+                'role' => $_POST['role']
+                // Password is not updated via this form
+            ];
+            
+            foreach ($users as &$user) {
+                if ($user['email'] === $emailToUpdate) {
+                    // Keep existing password and other fields that should not be modified
+                    $updatedData['mdp'] = $user['mdp'];
+                    $updatedData['date_inscription'] = $user['date_inscription'];
+                    $updatedData['derniere_connexion'] = $user['derniere_connexion'];
+                    $updatedData['favoris'] = $user['favoris'] ?? [];
+                    
+                    // Update user with new data
+                    $user = $updatedData;
+                    break;
+                }
+            }
+            saveUsers($file, $users);
+        }
     }
     
     // Refresh user data after changes
@@ -215,6 +223,7 @@ $usersToShow = array_slice($users, $start, $usersPerPage);
                 width: 60%;
                 max-width: 600px;
                 border-radius: 8px;
+                position: relative;
             }
             
             .close {
@@ -306,6 +315,69 @@ $usersToShow = array_slice($users, $start, $usersPerPage);
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
+            
+            /* Loading spinner styles */
+            .loading-overlay {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 8px;
+                z-index: 1001;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .spinner {
+                width: 50px;
+                height: 50px;
+                border: 5px solid rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                border-top-color: #2196F3;
+                animation: spin 1s ease-in-out infinite;
+            }
+            
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+            
+            /* Status message styles */
+            .status-message {
+                display: none;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                text-align: center;
+            }
+            
+            .success-message {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+            
+            .error-message {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+            }
+            
+            /* Field validation styles */
+            .field-error {
+                border-color: #dc3545 !important;
+                box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+            }
+            
+            .field-feedback {
+                display: none;
+                font-size: 0.8em;
+                margin-top: -10px;
+                margin-bottom: 10px;
+                color: #dc3545;
+            }
         </style>
         
         <script>
@@ -362,6 +434,12 @@ $usersToShow = array_slice($users, $start, $usersPerPage);
                         document.getElementById('theme-button').textContent = '🌙 Mode Sombre';
                     }
                 }
+                
+                // Set up the edit form submission handler
+                document.getElementById('edit-user-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    submitUserUpdate();
+                });
             };
             
             // Function to open the edit modal
@@ -377,11 +455,30 @@ $usersToShow = array_slice($users, $start, $usersPerPage);
                 document.getElementById('edit_num').value = user.num;
                 document.getElementById('edit_email').value = user.email;
                 document.getElementById('edit_role').value = user.role;
+                
+                // Reset any previous validation styling
+                resetValidationStyles();
+                
+                // Hide any previous status messages
+                document.getElementById('status-message').style.display = 'none';
             }
             
             // Function to close the modal
             function closeModal() {
                 document.getElementById('editModal').style.display = 'none';
+                resetValidationStyles();
+            }
+            
+            // Reset validation styles
+            function resetValidationStyles() {
+                const inputs = document.querySelectorAll('.edit-form input, .edit-form select');
+                inputs.forEach(input => {
+                    input.classList.remove('field-error');
+                    const feedbackElement = document.getElementById(`${input.id}-feedback`);
+                    if (feedbackElement) {
+                        feedbackElement.style.display = 'none';
+                    }
+                });
             }
             
             // Close modal when clicking outside
@@ -395,6 +492,202 @@ $usersToShow = array_slice($users, $start, $usersPerPage);
             // Confirm user deletion
             function confirmDelete(email, name) {
                 return confirm(`Êtes-vous sûr de vouloir supprimer l'utilisateur ${name} (${email}) ?`);
+            }
+            
+            // Validate the edit form
+            function validateEditForm() {
+                let isValid = true;
+                
+                // Validate name
+                const nomInput = document.getElementById('edit_nom');
+                if (!nomInput.value.trim()) {
+                    showFieldError(nomInput, 'Le nom est requis');
+                    isValid = false;
+                }
+                
+                // Validate first name
+                const prenomInput = document.getElementById('edit_prenom');
+                if (!prenomInput.value.trim()) {
+                    showFieldError(prenomInput, 'Le prénom est requis');
+                    isValid = false;
+                }
+                
+                // Validate email
+                const emailInput = document.getElementById('edit_email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailInput.value.trim()) {
+                    showFieldError(emailInput, 'L\'email est requis');
+                    isValid = false;
+                } else if (!emailRegex.test(emailInput.value.trim())) {
+                    showFieldError(emailInput, 'Format d\'email invalide');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            // Show field error
+            function showFieldError(inputElement, message) {
+                inputElement.classList.add('field-error');
+                
+                // Create or update feedback element
+                let feedbackElement = document.getElementById(`${inputElement.id}-feedback`);
+                if (!feedbackElement) {
+                    feedbackElement = document.createElement('div');
+                    feedbackElement.id = `${inputElement.id}-feedback`;
+                    feedbackElement.className = 'field-feedback';
+                    inputElement.parentNode.insertBefore(feedbackElement, inputElement.nextSibling);
+                }
+                
+                feedbackElement.textContent = message;
+                feedbackElement.style.display = 'block';
+            }
+            
+            // Submit user update via AJAX
+            function submitUserUpdate() {
+                // Validate form before submission
+                if (!validateEditForm()) {
+                    return;
+                }
+                
+                // Show loading overlay
+                document.getElementById('loading-overlay').style.display = 'flex';
+                
+                // Hide any previous status messages
+                document.getElementById('status-message').style.display = 'none';
+                
+                // Get form data
+                const form = document.getElementById('edit-user-form');
+                const formData = new FormData(form);
+                formData.append('ajax_update', 'true');
+                
+                // Send AJAX request
+                fetch('update_admin_user.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Hide loading overlay
+                    document.getElementById('loading-overlay').style.display = 'none';
+                    
+                    // Show status message
+                    const statusMessage = document.getElementById('status-message');
+                    statusMessage.textContent = data.message;
+                    
+                    if (data.success) {
+                        // Success case
+                        statusMessage.className = 'status-message success-message';
+                        statusMessage.style.display = 'block';
+                        
+                        // Update the user row in the table
+                        updateUserRow(data.user);
+                        
+                        // Close modal after a delay
+                        setTimeout(() => {
+                            closeModal();
+                        }, 2000);
+                    } else {
+                        // Error case
+                        statusMessage.className = 'status-message error-message';
+                        statusMessage.style.display = 'block';
+                        
+                        // Show field-specific errors if available
+                        if (data.errors) {
+                            Object.keys(data.errors).forEach(field => {
+                                const inputId = `edit_${field}`;
+                                const input = document.getElementById(inputId);
+                                if (input) {
+                                    showFieldError(input, data.errors[field]);
+                                }
+                            });
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    
+                    // Hide loading overlay
+                    document.getElementById('loading-overlay').style.display = 'none';
+                    
+                    // Show error message
+                    const statusMessage = document.getElementById('status-message');
+                    statusMessage.textContent = 'Une erreur est survenue lors de la mise à jour. Veuillez réessayer.';
+                    statusMessage.className = 'status-message error-message';
+                    statusMessage.style.display = 'block';
+                });
+            }
+            
+            // Update user row in the table
+            function updateUserRow(user) {
+                // Find the row with the matching email (either original or updated)
+                const originalEmail = document.getElementById('original_email').value;
+                const rows = document.querySelectorAll('.tabadmin tr');
+                
+                for (let i = 1; i < rows.length; i++) { // Start from 1 to skip header row
+                    const cells = rows[i].querySelectorAll('td');
+                    if (cells.length > 0) {
+                        const emailCell = cells[1]; // Email is in the second column
+                        
+                        if (emailCell.textContent.trim() === originalEmail) {
+                            // Update the row with new user data
+                            cells[0].textContent = `${user.nom} ${user.prenom}`; // Name
+                            cells[1].textContent = user.email; // Email
+                            cells[2].textContent = user.num; // Phone
+                            cells[3].textContent = user.genre; // Genre
+                            cells[4].textContent = user.role; // Role
+                            
+                            // Update the edit button with new user data
+                            const editButton = rows[i].querySelector('.btn-edit');
+                            if (editButton) {
+                                const userData = {
+                                    genre: user.genre,
+                                    nom: user.nom,
+                                    prenom: user.prenom,
+                                    num: user.num,
+                                    email: user.email,
+                                    role: user.role,
+                                    date_inscription: user.date_inscription,
+                                    derniere_connexion: user.derniere_connexion
+                                };
+                                
+                                const encodedUserData = encodeURIComponent(JSON.stringify(userData));
+                                editButton.setAttribute('onclick', `openEditModal('${encodedUserData}')`);
+                            }
+                            
+                            // Update other action buttons if needed
+                            const deleteForm = rows[i].querySelector('form[onsubmit*="confirmDelete"]');
+                            if (deleteForm) {
+                                const emailInput = deleteForm.querySelector('input[name="email"]');
+                                if (emailInput) {
+                                    emailInput.value = user.email;
+                                }
+                                deleteForm.setAttribute('onsubmit', `return confirmDelete('${user.email}', '${user.nom} ${user.prenom}')`);
+                            }
+                            
+                            // Update promote button if exists and role changed
+                            const promoteForm = rows[i].querySelector('form:not([onsubmit])');
+                            if (promoteForm) {
+                                if (user.role === "admin") {
+                                    // Remove promote button if user is now admin
+                                    promoteForm.remove();
+                                } else {
+                                    const emailInput = promoteForm.querySelector('input[name="email"]');
+                                    if (emailInput) {
+                                        emailInput.value = user.email;
+                                    }
+                                }
+                            }
+                            
+                            break;
+                        }
+                    }
+                }
             }
         </script>
     </head>
@@ -498,7 +791,16 @@ $usersToShow = array_slice($users, $start, $usersPerPage);
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2>Modifier les informations utilisateur</h2>
-                <form method="post" class="edit-form">
+                
+                <!-- Status message container -->
+                <div id="status-message" class="status-message"></div>
+                
+                <!-- Loading overlay with spinner -->
+                <div id="loading-overlay" class="loading-overlay">
+                    <div class="spinner"></div>
+                </div>
+                
+                <form id="edit-user-form" class="edit-form">
                     <input type="hidden" id="original_email" name="original_email">
                     
                     <label for="edit_genre">Genre:</label>
@@ -526,7 +828,7 @@ $usersToShow = array_slice($users, $start, $usersPerPage);
                         <option value="admin">Admin</option>
                     </select>
                     
-                    <button type="submit" name="update" class="btn-update">Enregistrer les modifications</button>
+                    <button type="submit" class="btn-update">Enregistrer les modifications</button>
                 </form>
             </div>
         </div>

@@ -409,48 +409,25 @@ input[type="text"], input[type="tel"], input[type="password"]{
 
 /*    PAGE   PROFIL       */
 
-/* === Profil utilisateur - Dark Mode Fix === */
-
-.profil {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(30, 30, 30, 0.9);
+.profil{
+    padding: 10px;
+    padding-top: 20px;
+    padding-left: 30px;
+    width:400px;
+    height:390px;
+    border-radius: 4cap;
+    background-color: rgba(30, 30, 30, 0.8);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+    font-size: 15px;
+    text-align: left;
     font-family: quicksand, sans-serif;
     color: #e0e0e0;
-    max-width: 500px; /* Agrandit légèrement mais reste responsive */
-    width: 100%;        /* Responsive sur petits écrans */
-    margin: auto;
 }
 
-.profil-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 15px;
-    font-size: 18px;
+.profil-info{
+    font-size: 20px;
     color: #A1B5D8;
-    word-break: break-word;
 }
-
-.profil-info input[type="text"],
-.profil-info input[type="password"],
-.profil-info input[type="email"],
-.profil-info input[type="tel"] {
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #555;
-    background-color: #2c2c2c;
-    color: #fff;
-    box-sizing: border-box;
-}
-
-.btn-modif {
-    align-self: flex-start;
-    margin-top: 5px;
-} /* Pour éviter le débordement sur petits écrans */
 
 button {
     background: none;

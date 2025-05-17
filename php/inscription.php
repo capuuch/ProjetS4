@@ -212,7 +212,7 @@
         $_SESSION['role'] = $userData['role'];
 
         // Rediriger vers la page de profil
-        //header("Location: profil.php");
+        // header("Location: profil.php");
         exit;
 
         }

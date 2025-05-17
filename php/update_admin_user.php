@@ -2,16 +2,19 @@
 session_start();
 header('Content-Type: application/json'); // Set content type to JSON for AJAX responses
 
-// Check if user is logged in
-if (!isset($_SESSION['user_id']) || !isset($_SESSION['user'])) {
+// Security check - Uncomment this in production
+/*if (empty($_SESSION['user_id']) || $_SESSION['role'] !== "admin") {
     echo json_encode([
         'success' => false,
-        'message' => "Vous devez être connecté pour accéder à cette page."
+        'message' => "Accès non autorisé. Vous devez être administrateur pour effectuer cette action."
     ]);
     exit;
-}
+}*/
 
-// Define the user data file path
+// Simulate server latency (2-3 seconds)
+sleep(2);
+
+// Load user data from JSON file
 $file = '../json/data1.json';
 
 // Check for alternative paths if file doesn't exist
@@ -77,17 +80,16 @@ try {
     exit;
 }
 
-// Get current user email for identification (this is the email BEFORE any changes)
-$currentUserEmail = $_SESSION['user']['email']; 
-// Get original user_id, assuming it might be different from email or you want to preserve original one if not email
-$currentUserId = $_SESSION['user_id'];
+// Get current user email for identification
+$originalEmail = isset($_POST['original_email']) ? trim($_POST['original_email']) : '';
 
 // Process form data
-$nom = isset($_POST['nom']) ? trim($_POST['nom']) : $_SESSION['user']['nom'];
-$prenom = isset($_POST['prenom']) ? trim($_POST['prenom']) : $_SESSION['user']['prenom'];
-$email = isset($_POST['email']) ? trim($_POST['email']) : $_SESSION['user']['email'];
-$num = isset($_POST['num']) ? trim($_POST['num']) : ($_SESSION['user']['num'] ?? '');
-$password = isset($_POST['password']) ? trim($_POST['password']) : '';
+$genre = isset($_POST['genre']) ? trim($_POST['genre']) : '';
+$nom = isset($_POST['nom']) ? trim($_POST['nom']) : '';
+$prenom = isset($_POST['prenom']) ? trim($_POST['prenom']) : '';
+$num = isset($_POST['num']) ? trim($_POST['num']) : '';
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$role = isset($_POST['role']) ? trim($_POST['role']) : '';
 
 // Validation errors array
 $errors = [];
@@ -108,7 +110,7 @@ if (empty($email)) {
 }
 
 // Check if new email already exists for a DIFFERENT user
-if ($email !== $currentUserEmail) {
+if ($email !== $originalEmail) {
     foreach ($users as $existingUser) {
         if ($existingUser['email'] === $email) {
             $errors['email'] = "Cette adresse email est déjà utilisée par un autre compte.";
@@ -129,30 +131,31 @@ if (!empty($errors)) {
 
 // Find and update the user
 $userFound = false;
-$updatedUserSessionData = null;
+$updatedUser = null;
+$originalValues = null;
 
-foreach ($users as &$userEntry) {
-    if ($userEntry['email'] === $currentUserEmail) {
+foreach ($users as &$user) {
+    if ($user['email'] === $originalEmail) {
         // Store original values before update
         $originalValues = [
-            'nom' => $userEntry['nom'],
-            'prenom' => $userEntry['prenom'],
-            'email' => $userEntry['email'],
-            'num' => $userEntry['num'] ?? ''
+            'genre' => $user['genre'],
+            'nom' => $user['nom'],
+            'prenom' => $user['prenom'],
+            'num' => $user['num'],
+            'email' => $user['email'],
+            'role' => $user['role']
         ];
         
         // Update specific fields
-        $userEntry['nom'] = $nom;
-        $userEntry['prenom'] = $prenom;
-        $userEntry['email'] = $email;
-        $userEntry['num'] = $num;
+        $user['genre'] = $genre;
+        $user['nom'] = $nom;
+        $user['prenom'] = $prenom;
+        $user['num'] = $num;
+        $user['email'] = $email;
+        $user['role'] = $role;
         
-        // Update password only if a new one is provided
-        if (!empty($password)) {
-            $userEntry['mdp'] = password_hash($password, PASSWORD_DEFAULT);
-        }
-        
-        $updatedUserSessionData = $userEntry;
+        // Keep other fields unchanged
+        $updatedUser = $user;
         $userFound = true;
         break;
     }
@@ -161,7 +164,7 @@ foreach ($users as &$userEntry) {
 if (!$userFound) {
     echo json_encode([
         'success' => false,
-        'message' => "Utilisateur non trouvé. Votre session pourrait être invalide. Veuillez vous reconnecter."
+        'message' => "Utilisateur non trouvé. Veuillez rafraîchir la page et réessayer."
     ]);
     exit;
 }
@@ -179,24 +182,11 @@ try {
         throw new Exception("Échec de l'écriture dans le fichier. " . ($error['message'] ?? 'Raison inconnue. Vérifiez les logs du serveur.'));
     }
     
-    // Update the session data with new user info
-    $_SESSION['user'] = $updatedUserSessionData;
-    
-    // Update user_id in session IF it's tied to the email and the email has changed
-    if ($email !== $currentUserEmail && $_SESSION['user_id'] === $currentUserEmail) {
-        $_SESSION['user_id'] = $email;
-    }
-    
     // Return success response with updated user data
     echo json_encode([
         'success' => true,
-        'message' => "Profil mis à jour avec succès !",
-        'user' => [
-            'nom' => $nom,
-            'prenom' => $prenom,
-            'email' => $email,
-            'num' => $num
-        ]
+        'message' => "Informations utilisateur mises à jour avec succès !",
+        'user' => $updatedUser
     ]);
     exit;
     
@@ -204,7 +194,7 @@ try {
     echo json_encode([
         'success' => false,
         'message' => "Erreur lors de la sauvegarde des données: " . $e->getMessage(),
-        'originalValues' => $originalValues ?? null
+        'originalValues' => $originalValues
     ]);
     exit;
 }

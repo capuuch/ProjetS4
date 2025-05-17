@@ -2,17 +2,17 @@
     "z": {
         "1": {
             "11": {
-                "activit\u00e9": "Visite d'un parc",
+                "activité": "Visite d'un parc",
                 "hebergement": "Auberge",
                 "transport": "Voiture"
             },
             "12": {
-                "activit\u00e9": "Ski ou Snowboard",
+                "activité": "Ski ou Snowboard",
                 "hebergement": "Chalet",
                 "transport": "Navette"
             },
             "13": {
-                "activit\u00e9": "Randonn\u00e9e hivernale",
+                "activité": "Randonnée hivernale",
                 "hebergement": "Auberge",
                 "transport": "Voiture"
             },
@@ -24,17 +24,17 @@
             "voyage_titre": "Vancouver",
             "etapes": {
                 "11": {
-                    "activit\u00e9": "Visite d'un parc",
+                    "activité": "Visite d'un parc",
                     "hebergement": "Auberge",
                     "transport": "Train"
                 },
                 "12": {
-                    "activit\u00e9": "Ski ou Snowboard",
+                    "activité": "Ski ou Snowboard",
                     "hebergement": "Auberge",
                     "transport": "Voiture"
                 },
                 "13": {
-                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "activité": "Randonnée hivernale",
                     "hebergement": "Hotel Luxe",
                     "transport": "Voiture"
                 }
@@ -51,17 +51,17 @@
             "voyage_titre": "Vancouver",
             "etapes": {
                 "11": {
-                    "activit\u00e9": "Visite d'un parc",
+                    "activité": "Visite d'un parc",
                     "hebergement": "Auberge",
                     "transport": "Voiture"
                 },
                 "12": {
-                    "activit\u00e9": "Ski ou Snowboard",
+                    "activité": "Ski ou Snowboard",
                     "hebergement": "Hotel Luxe",
                     "transport": "Voiture"
                 },
                 "13": {
-                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "activité": "Randonnée hivernale",
                     "hebergement": "Hotel Luxe",
                     "transport": "Voiture"
                 }
@@ -73,20 +73,20 @@
                 "prenom": "",
                 "email": ""
             },
-            "voyage_titre": "Qu\u00e9bec",
+            "voyage_titre": "Québec",
             "etapes": {
                 "21": {
-                    "activit\u00e9": "Visite guid\u00e9e de la vieille ville",
+                    "activité": "Visite guidée de la vieille ville",
                     "hebergement": "Auberge",
                     "transport": "Train"
                 },
                 "22": {
-                    "activit\u00e9": "Visite du quartier historique",
+                    "activité": "Visite du quartier historique",
                     "hebergement": "Chalet",
                     "transport": "Train"
                 },
                 "23": {
-                    "activit\u00e9": "Visite guid\u00e9e encore",
+                    "activité": "Visite guidée encore",
                     "hebergement": "Chalet",
                     "transport": "Voiture"
                 }
@@ -101,17 +101,17 @@
             "voyage_titre": "Toronto",
             "etapes": {
                 "31": {
-                    "activit\u00e9": null,
+                    "activité": null,
                     "hebergement": "Hotel Luxe",
                     "transport": "Voiture"
                 },
                 "32": {
-                    "activit\u00e9": "Visite des galeries d'art",
+                    "activité": "Visite des galeries d'art",
                     "hebergement": "Chalet",
                     "transport": "Navette"
                 },
                 "33": {
-                    "activit\u00e9": "D\u00e9couverte de la faune",
+                    "activité": "Découverte de la faune",
                     "hebergement": "Hotel Luxe",
                     "transport": "Train"
                 }
@@ -126,17 +126,17 @@
             "voyage_titre": "Rocky Mountains",
             "etapes": {
                 "61": {
-                    "activit\u00e9": "Randonn\u00e9e dans le parc national",
+                    "activité": "Randonnée dans le parc national",
                     "hebergement": "",
                     "transport": "Train"
                 },
                 "62": {
-                    "activit\u00e9": "Kayak dans le lac",
+                    "activité": "Kayak dans le lac",
                     "hebergement": "",
                     "transport": "Voiture"
                 },
                 "63": {
-                    "activit\u00e9": null,
+                    "activité": null,
                     "hebergement": "Hotel Luxe",
                     "transport": ""
                 }
@@ -153,17 +153,17 @@
             "voyage_titre": "Vancouver",
             "etapes": {
                 "11": {
-                    "activit\u00e9": "Visite d'un parc",
+                    "activité": "Visite d'un parc",
                     "hebergement": "Hotel Luxe",
                     "transport": "Navette"
                 },
                 "12": {
-                    "activit\u00e9": "Ski ou Snowboard",
+                    "activité": "Ski ou Snowboard",
                     "hebergement": "Hotel Luxe",
                     "transport": "Voiture"
                 },
                 "13": {
-                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "activité": "Randonnée hivernale",
                     "hebergement": "Chalet",
                     "transport": "Voiture"
                 }
@@ -181,17 +181,17 @@
             "voyage_titre": "Vancouver",
             "etapes": {
                 "11": {
-                    "activit\u00e9": "Visite d'un parc",
+                    "activité": "Visite d'un parc",
                     "hebergement": "Chalet",
                     "transport": "Train"
                 },
                 "12": {
-                    "activit\u00e9": "Ski ou Snowboard",
+                    "activité": "Ski ou Snowboard",
                     "hebergement": "Chalet",
                     "transport": "Navette"
                 },
                 "13": {
-                    "activit\u00e9": "Randonn\u00e9e hivernale",
+                    "activité": "Randonnée hivernale",
                     "hebergement": "Hotel Luxe",
                     "transport": "Train"
                 }
@@ -199,7 +199,7 @@
             "options_generales": {
                 "nb_pers": 1,
                 "date_depart": "1111-11-11",
-                "restauration": "Pension compl\u00e8te",
+                "restauration": "Pension complète",
                 "assurance": true
             }
         },
@@ -212,17 +212,17 @@
             "voyage_titre": "Toronto",
             "etapes": {
                 "31": {
-                    "activit\u00e9": "Balade dans le parc",
+                    "activité": "Balade dans le parc",
                     "hebergement": "Hotel Luxe",
                     "transport": "Navette"
                 },
                 "32": {
-                    "activit\u00e9": "Visite des galeries d'art",
+                    "activité": "Visite des galeries d'art",
                     "hebergement": "Hotel Luxe",
                     "transport": "Navette"
                 },
                 "33": {
-                    "activit\u00e9": null,
+                    "activité": null,
                     "hebergement": "Hotel Luxe",
                     "transport": "Navette"
                 }
@@ -232,6 +232,72 @@
                 "date_depart": "1111-11-11",
                 "restauration": "Demi-pension",
                 "assurance": true
+            }
+        }
+    },
+    "Metales": {
+        "3": {
+            "user_info": {
+                "nom": "Metales",
+                "prenom": "kader",
+                "email": "metalesaek@gmail.com"
+            },
+            "voyage_titre": "Toronto",
+            "etapes": {
+                "31": {
+                    "activité": "Randonnée dans le parc national",
+                    "hebergement": "Appartement avec vue sur la ville",
+                    "transport": "Métro"
+                },
+                "32": {
+                    "activité": "Visite guidée de la vieille ville",
+                    "hebergement": "Auberge",
+                    "transport": "Bus"
+                },
+                "33": {
+                    "activité": "Visite d'un parc",
+                    "hebergement": "Appartement",
+                    "transport": "Bus"
+                }
+            },
+            "options_generales": {
+                "nb_pers": 1,
+                "date_depart": "2025-05-24",
+                "restauration": "Aucune",
+                "assurance": false
+            }
+        }
+    },
+    "anas": {
+        "1": {
+            "user_info": {
+                "nom": "anas",
+                "prenom": "chokri",
+                "email": "anas@chokri.com"
+            },
+            "voyage_titre": "Vancouver",
+            "etapes": {
+                "11": {
+                    "activité": "Visite d'un parc",
+                    "hebergement": "Hôtel avec vue sur les montagnes",
+                    "transport": "métro"
+                },
+                "12": {
+                    "activité": "Ski ou Snowboard",
+                    "hebergement": "Chalet de montagne cosy",
+                    "transport": "navette"
+                },
+                "13": {
+                    "activité": "Randonnée hivernale",
+                    "hebergement": "Hôtel 3 étoiles",
+                    "transport": "Navette privée"
+                }
+            },
+            "options_generales": {
+                "nb_pers": 1,
+                "date_depart": "",
+                "restauration": "Aucune",
+                "assurance": false
             }
         }
     }
